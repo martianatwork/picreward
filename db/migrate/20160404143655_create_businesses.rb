@@ -3,7 +3,7 @@ class CreateBusinesses < ActiveRecord::Migration
     create_table :businesses do |t|
       t.references :user, index: true, foreign_key: true
       t.string :name
-      t.string :adress
+      t.string :address
       t.string :category
       t.string :tva
       t.string :contact_name
