@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :businesses
   get 'pages/home'
 
   get 'pages/influencers_home'
@@ -29,19 +30,6 @@ Rails.application.routes.draw do
 
   get 'campaigns/show'
 
-  get 'businesses/create'
-
-  get 'businesses/index'
-
-  get 'businesses/show'
-
-  get 'businesses/update'
-
-  get 'businesses/edit'
-
-  get 'businesses/new'
-
-  get 'businesses/destroy'
 
   resources :influencers
 
