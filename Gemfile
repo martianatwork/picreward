@@ -19,6 +19,9 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'faker'
+gem 'omniauth-instagram'
+gem 'instagram'
+
 
 group :development, :test do
   gem 'binding_of_caller'

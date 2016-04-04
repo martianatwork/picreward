@@ -2,3 +2,5 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <%= cl_image_tag("eulg9oenqcpqjwlheswg.jpg") %>
+
+<%= Instagram.client(:access_token => session[:access_token]) %>
