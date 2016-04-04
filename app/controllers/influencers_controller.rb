@@ -21,6 +21,7 @@ class InfluencersController < ApplicationController
     else
       flash[:alert] = "Failed to create #{@influencer.username}"
       render :new
+    end
   end
 
   def edit
@@ -28,8 +29,8 @@ class InfluencersController < ApplicationController
 
   def destroy
     @influencer.destroy
-
-    redirect_to influencers_path
+    flash[:notice] = "Successfully deleted #{@influencer.username}"
+    redirect_to root_path
   end
 
   def update
@@ -40,7 +41,7 @@ class InfluencersController < ApplicationController
   private
 
   def influencer_params
-    params.require(:influencer).permit(:first_name, :last_name, :address, :number)
+    params.require(:influencer).permit(:first_name, :last_name, :address, :number, :photo, :photo_cache)
   end
 
   def find_influencer
