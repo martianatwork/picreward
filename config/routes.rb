@@ -1,4 +1,62 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
+  get 'pages/influencers_home'
+
+  get 'pages/businesses_home'
+
+  get 'applications/create'
+
+  get 'applications/new'
+
+  get 'applications/update'
+
+  get 'applications/show'
+
+  get 'applications/edit'
+
+  get 'applications/index'
+
+  get 'campaigns/new'
+
+  get 'campaigns/edit'
+
+  get 'campaigns/create'
+
+  get 'campaigns/update'
+
+  get 'campaigns/index'
+
+  get 'campaigns/show'
+
+  get 'businesses/create'
+
+  get 'businesses/index'
+
+  get 'businesses/show'
+
+  get 'businesses/update'
+
+  get 'businesses/edit'
+
+  get 'businesses/new'
+
+  get 'businesses/destroy'
+
+  get 'influencers/index'
+
+  get 'influencers/show'
+
+  get 'influencers/create'
+
+  get 'influencers/destroy'
+
+  get 'influencers/update'
+
+  get 'influencers/edit'
+
+  get 'influencers/new'
+
   devise_for :users
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
