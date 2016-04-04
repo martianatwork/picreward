@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160404164432) do
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "adress"
+    t.string   "address"
     t.string   "category"
     t.string   "tva"
     t.string   "contact_name"
