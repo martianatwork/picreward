@@ -43,19 +43,7 @@ Rails.application.routes.draw do
 
   get 'businesses/destroy'
 
-  get 'influencers/index'
-
-  get 'influencers/show'
-
-  get 'influencers/create'
-
-  get 'influencers/destroy'
-
-  get 'influencers/update'
-
-  get 'influencers/edit'
-
-  get 'influencers/new'
+  resources :influencers
 
   devise_for :users
   root to: 'pages#home'
