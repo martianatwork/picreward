@@ -2,6 +2,8 @@ class Influencer < ActiveRecord::Base
   belongs_to :user
   has_many :applications
   has_many :tags
+  has_many :places
+
   mount_uploader :photo, PhotoUploader
 
   def self.avg_photo_comments(token)
@@ -33,32 +35,32 @@ class Influencer < ActiveRecord::Base
           hash[word] = 1
         end
       end
-      hash.each do |k,v|
-        Tag.create(influencer_id: id,
-          name: k,
-          frequency: v)
-      end
-      #   Tag.create(name: tag[0], frequency: tag[1])
+    end
+    hash.each do |k,v|
+      Tag.create(influencer_id: id,
+        name: k,
+        frequency: v)
     end
   end
 
-  def self.top_places(token)
-    # hash = {}
-    # client = Instagram.client(:access_token => token)
-    # client.user_recent_media.each do |media_item|
-    #   if media_item.location
-
-    #     media_item.location.name
-    #     if hash[media_item.location.name]
-    #       hash[media_item.location.name] += 1
-    #     else
-    #       hash[media_item.location.name] = 1
-    #     end
-    #   end
-    # end
-    # array << hash.sort_by {|k,v| v}.reverse
-
-
+  def top_places(token)
+    hash = {}
+    client = Instagram.client(:access_token => token)
+    client.user_recent_media.each do |media_item|
+      if media_item.location
+        # p media_item.location.name
+        if hash.has_key?(media_item.location.name)
+          hash[media_item.location.name] += 1
+        else
+          hash[media_item.location.name] = 1
+        end
+      end
+    end
+    hash.each do |k,v|
+      Place.create(influencer_id: id,
+        name: k,
+        frequency: v)
+    end
   end
 
   def self.username(token)
