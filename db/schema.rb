@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405171423) do
+ActiveRecord::Schema.define(version: 20160405122708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20160405171423) do
     t.string   "category"
     t.string   "tva"
     t.string   "contact_name"
-    t.string   "logo"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "photo"
@@ -47,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160405171423) do
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
+    t.string   "reward_type"
+    t.string   "target_location"
     t.string   "title"
     t.string   "product"
     t.string   "goal"
@@ -58,8 +59,11 @@ ActiveRecord::Schema.define(version: 20160405171423) do
     t.integer  "pics_to_post"
     t.integer  "budget"
     t.integer  "business_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "campaigns", ["business_id"], name: "index_campaigns_on_business_id", using: :btree

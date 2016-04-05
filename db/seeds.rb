@@ -8,6 +8,7 @@
 
 10.times do
 Campaign.create(
+  reward_type: ["Paid", "Local"].sample,
   title: Faker::Name.title,
   product: Faker::Commerce.product_name,
   goal: Faker::Hacker.verb,
@@ -31,6 +32,7 @@ Influencer.create(
   number: Faker::PhoneNumber.cell_phone,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
+  photo: Faker::Avatar.image
 )
 
 Business.create(
@@ -39,7 +41,6 @@ Business.create(
   category: Faker::Commerce.department,
   tva: Faker::Number.number(10),
   contact_name: Faker::Name.name,
-  logo: Faker::Avatar.image,
   photo: Faker::Avatar.image
   )
 

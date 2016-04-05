@@ -1,8 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 text-center">
 
-<%= cl_image_tag("eulg9oenqcpqjwlheswg.jpg") %>
+    <h1>Choose your side !</h1>
 
+    <div class="col-sm-6">
 
+      <%= link_to businesses_home_path do %>
+      <i class="fa fa-briefcase fa-5x"></i>
+      <% end %>
 
-<!-- https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN -->
+    </div>
+    <div class="col-sm-6">
+
+      <%= link_to influencers_home_path do %>
+      <i class="fa fa-bullhorn fa-5x"></i>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+

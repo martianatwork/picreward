@@ -13,3 +13,12 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+@import "businesses/index";
+@import "businesses/new";
+@import "businesses/show";
+
+
+
+.body {
+  background-color: $gray-body;
+}

@@ -1,6 +1,8 @@
 class CreateCampaigns < ActiveRecord::Migration
   def change
     create_table :campaigns do |t|
+      t.string :reward_type
+      t.string :target_location
       t.string :title
       t.string :product
       t.string :goal
