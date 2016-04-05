@@ -41,7 +41,6 @@ Business.create(
   category: Faker::Commerce.department,
   tva: Faker::Number.number(10),
   contact_name: Faker::Name.name,
-  logo: Faker::Avatar.image,
   photo: Faker::Avatar.image
   )
 
