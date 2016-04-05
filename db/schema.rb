@@ -73,8 +73,6 @@ ActiveRecord::Schema.define(version: 20160405122708) do
     t.integer  "followers"
     t.integer  "avg_photo_comments"
     t.integer  "avg_photo_likes"
-    t.string   "top_hashtags"
-    t.string   "top_places"
     t.string   "address"
     t.string   "number"
     t.string   "first_name"
@@ -86,6 +84,28 @@ ActiveRecord::Schema.define(version: 20160405122708) do
   end
 
   add_index "influencers", ["user_id"], name: "index_influencers_on_user_id", using: :btree
+
+  create_table "places", force: :cascade do |t|
+    t.string   "longitude"
+    t.string   "latitude"
+    t.string   "name"
+    t.integer  "frequency"
+    t.integer  "influencer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "places", ["influencer_id"], name: "index_places_on_influencer_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "frequency"
+    t.integer  "influencer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "tags", ["influencer_id"], name: "index_tags_on_influencer_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -100,6 +120,10 @@ ActiveRecord::Schema.define(version: 20160405122708) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -110,4 +134,6 @@ ActiveRecord::Schema.define(version: 20160405122708) do
   add_foreign_key "businesses", "users"
   add_foreign_key "campaigns", "businesses"
   add_foreign_key "influencers", "users"
+  add_foreign_key "places", "influencers"
+  add_foreign_key "tags", "influencers"
 end

@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'faker'
+gem 'omniauth-instagram'
+gem 'instagram'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
