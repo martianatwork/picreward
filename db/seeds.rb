@@ -31,6 +31,7 @@ Influencer.create(
   number: Faker::PhoneNumber.cell_phone,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
+  photo: Faker::Avatar.image
 )
 
 Business.create(

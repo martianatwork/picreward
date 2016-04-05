@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'pages/influencers_home', to: 'pages#influencers_home', as: :influencers_home
+
+  get 'pages/businesses_home', to: 'pages#businesses_home', as: :businesses_home
+
   resources :businesses
-  get 'pages/home'
 
-  get 'pages/influencers_home'
-
-  get 'pages/businesses_home'
 
   get 'applications/create'
 
@@ -18,17 +19,7 @@ Rails.application.routes.draw do
 
   get 'applications/index'
 
-  get 'campaigns/new'
-
-  get 'campaigns/edit'
-
-  get 'campaigns/create'
-
-  get 'campaigns/update'
-
-  get 'campaigns/index'
-
-  get 'campaigns/show'
+  resources :campaigns
 
 
   resources :influencers
