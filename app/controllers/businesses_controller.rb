@@ -7,10 +7,10 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-    @business.user = current_user.id
+    @business.user = current_user
     if @business.save
       flash[:notice] = "Welcome Aboard, #{@business.name}!"
-      redirect_to businesses_show_path(@business)
+      redirect_to business_path(@business)
     else
       flash[:alert] = "Invalid parameters, try again"
       render :new
@@ -32,7 +32,7 @@ class BusinessesController < ApplicationController
 
   def update
     @business.update(business_params)
-    redirect_to businesses_show_path(@business)
+    redirect_to business_path(@business)
   end
 
   def destroy
