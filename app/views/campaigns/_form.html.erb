@@ -1,7 +1,7 @@
 <%= simple_form_for(@campaign) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :reward_type, collection: [ "Paid", "Local"], as: :radio_buttons %>
+  <%= f.input :reward_type, collection: [ "Paid Job", "Local Swap"], as: :radio_buttons %>
   <%= f.input :target_location, label: 'Target Location (if local)', placeholder: '3 Rue de la Paix, 75002 Paris, France' %>
   <%= f.input :title %>
   <%= f.input :product %>
