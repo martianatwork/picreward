@@ -1,6 +1,20 @@
-<h1>Businesses#index</h1>
-<p>Find me in app/views/businesses/index.html.erb</p>
+<h1> Our Gang </h1>
 
-<% @businesses.each do |b| %>
-  <%= b.logo %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @businesses.each do |business| %>
+      <div class="col-xs-12 col-sm-5 col-md-4">
+        <div class="business-card">
+            <p><%= business.name%></p>
+            <div class="business-card-banner" style="background-image: url('http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif');"></div>
+            <p> #<%= (business.category).split.join %> </p>
+            <hr class="line">
+            <%= link_to business_path(business), class: "business-link" do %>
+              @Check Da Firm
+            <% end %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
