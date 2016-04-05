@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
 
+  <% if @campaign.reward_type == "Local" %>
+    <p><strong><%= @campaign.target_location %></strong></p>
+  <% end %>
+
    <p><%= @campaign.title %></p>
    <p><%= @campaign.product %></p>
    <p><%= @campaign.goal %></p>

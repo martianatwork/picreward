@@ -8,6 +8,7 @@
 
 10.times do
 Campaign.create(
+  reward_type: ["Paid", "Local"].sample,
   title: Faker::Name.title,
   product: Faker::Commerce.product_name,
   goal: Faker::Hacker.verb,
