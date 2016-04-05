@@ -5,8 +5,6 @@ class CreateInfluencers < ActiveRecord::Migration
       t.integer :followers
       t.integer :avg_photo_comments
       t.integer :avg_photo_likes
-      t.string :top_hashtags
-      t.string :top_places
       t.string :address
       t.string :number
       t.string :first_name
