@@ -21,13 +21,21 @@
     budget: Faker::Number.between(0, 20000)
     )
 
+  Place.create(
+    name: Faker::Address.street_address,
+    frequency: Faker::Number.between(1, 5),
+    )
+
+  Tag.create(
+    name: Faker::Lorem.words(4),
+    frequency: Faker::Number.between(1, 5),
+    )
+
   Influencer.create(
     username: Faker::Name.first_name,
     followers: Faker::Number.between(500, 200000),
     avg_photo_comments: Faker::Number.between(10, 2000),
     avg_photo_likes: Faker::Number.between(20, 4000),
-    top_hashtags: Faker::Lorem.words(4),
-    top_places: Faker::Address.street_address,
     address: Faker::Address.street_address,
     number: Faker::PhoneNumber.cell_phone,
     first_name: Faker::Name.first_name,
