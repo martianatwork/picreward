@@ -3,13 +3,20 @@ class CampaignsController < ApplicationController
 
   def index
     @campaigns = Campaign.all
+    # @local_campaigns = Campaign.where(reward_type: "Local")
+    @local_campaigns = Campaign.find("4")
+    @markers = Gmaps4rails.build_markers(@local_campaigns) do |campaign, marker|
+      marker.lat campaign.latitude
+      marker.lng campaign.longitude
+      marker.infowindow render_to_string(:partial => "/campaigns/map_box", locals: {campaign: campaign})
+    end
   end
 
   def show
   end
 
   def new
-    @campaign = Compaign.new
+    @campaign = Campaign.new
   end
 
   def create
