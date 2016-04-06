@@ -1,2 +1,17 @@
-<h1>Applications#index</h1>
-<p>Find me in app/views/applications/index.html.erb</p>
+<h1> Applications </h1>
+
+<div class="container">
+  <div class="row">
+    <% @applications.each do |app| %>
+      <div class="col-xs-12 col-sm-5 col-md-4">
+        <div class="business-card">
+            <p><%= app.influencer.username %></p>
+            <div class="business-card-banner" style="background-image: url('http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif');"></div>
+            <p> #<%= Tag.find(app.influencer_id).name %> </p>
+            <hr class="line">
+            <%= link_to "@seetheapplication", campaign_application_path(Campaign.find(app.campaign_id), app), class: " business-link brand-button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
