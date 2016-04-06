@@ -13,6 +13,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
+  @application = Application.new
   end
 
   def new
