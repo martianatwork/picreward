@@ -1,26 +1,18 @@
 
-<div class="banner-home" style="background-image: url('https://res.cloudinary.com/dechj4lre/image/upload/r_0/v1459936019/PicReward/homepage.jpg');">
-
-<div class="row nomargin">
-  <div class="col-sm-8 col-sm-offset-2 text-center">
-
-    <h1>Choose your side !</h1>
-
-    <div class="col-sm-6">
-
-      <%= link_to businesses_home_path do %>
-      <i class="fa fa-briefcase fa-5x"></i>
-      <% end %>
-
+<div class="banner-home" style="background-image: url('http://res.cloudinary.com/dechj4lre/image/upload/v1459948115/PicReward/essai.png'); background-size: cover">
+  <div class="row nomargin">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <h1>Choose your side !</h1>
+      <div class="col-sm-6">
+        <%= link_to businesses_home_path do %>
+        <i class="fa fa-briefcase fa-5x"></i>
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to influencers_home_path do %>
+        <i class="fa fa-bullhorn fa-5x"></i>
+        <% end %>
+      </div>
     </div>
-    <div class="col-sm-6">
-
-      <%= link_to influencers_home_path do %>
-      <i class="fa fa-bullhorn fa-5x"></i>
-      <% end %>
-
-    </div>
-
   </div>
 </div>
-
