@@ -1,5 +1,8 @@
 class ApplicationsController < ApplicationController
+
   before_action :authenticate_user!, only: [:create]
+  before_action :find_application, only: [:show, :edit, :update]
+
   def new
     @application = Application.new
   end
@@ -21,21 +24,25 @@ class ApplicationsController < ApplicationController
   end
 
   def index
+    # @campaign = Campaign.find(params[:campaign_id])
     @applications = Application.all
   end
 
   def show
-    @application = Application.find(params[:id])
+    @campaign = Campaign.find(params[:campaign_id])
     if @application == nil
       redirect_to campaign_path(@campaign)
     end
   end
 
-
   private
 
   def application_params
     params.require(:application).permit(:motivation)
+  end
+
+  def find_application
+    @application = Application.find(params[:id])
   end
 
 end

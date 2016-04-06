@@ -1,2 +1,47 @@
-<h1>Applications#show</h1>
-<p>Find me in app/views/applications/show.html.erb</p>
+<h1 class="text-center"> Application #<%= @application.id %> </h1>
+
+<div class="row">
+    <div class="form-container col-xs-12 col-sm-5 col-sm-offset-1">
+      <img src="#{<%= @application.campaign.photo %>}" alt="" class="text-center" style="border-radius: 50%; width: 130px; padding: 20px; margin-left: 150px">
+      <p class="text-center"><%= @application.influencer.username %> </p>
+      <h4 class="text-center" style="margin-top: 50px">Top Posts</h4>
+      <img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="src" style="border-radius: 40px; width: 125px;margin-left: 25px; padding: 20px">
+      <img src="https://www.reverbcity.com/arquivos/uploads/blog/2973.jpg" alt="" class="src" style="border-radius: 40px; width: 125px; padding: 20px">
+      <img src="http://girlsonmyfeet.com/wp-content/uploads/2015/10/adidas-yeezyboost.jpg" alt="" class="src" style="border-radius: 40px; width: 125px; padding: 20px">
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-container">
+        <h4>Infos</h4><br>
+
+        <p>
+        <div class="flexbox" style="display: flex; justify-content: space-between; ">
+          <a>Average Comments/photo:</a> <a><%= @application.influencer.avg_photo_comments %></a>
+        </div>
+        </p>
+
+        <p>
+        <div class="flexbox" style="display: flex; justify-content: space-between; ">
+        <a>Average Likes/photo:</a> <a><%= @application.influencer.avg_photo_likes %></a>
+        </div>
+        </p>
+
+        <p>
+        <div class="flexbox" style="display: flex; justify-content: space-between; ">
+        <a>Followers:</a> <a><%=@application.influencer.followers %></a>
+        </div>
+        </p>
+
+        <p>
+        <div class="flexbox" style="display: flex; justify-content: space-between; ">
+        <a>Most Used Tag:</a> <a>#<%= Tag.find(@application.influencer_id).name %></a>
+        </div>
+        </p><br>
+
+        <h4>Motivation Speech</h4>
+        <p><%= @application.motivation %></p><br>
+        <h4>Status</h4>
+        <p><%= @application.status %></p>
+    </div>
+  </div>
+</div>
+

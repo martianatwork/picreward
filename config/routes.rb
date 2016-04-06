@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   resources :businesses
 
 
-  resources :campaigns
-
   resources :campaigns do
-    resources :applications, only: :create
+    resources :applications
   end
 
   resources :influencers
