@@ -1,18 +1,36 @@
-
-<div class="banner-home" style="background-image: url('http://res.cloudinary.com/dechj4lre/image/upload/v1459948115/PicReward/essai.png'); background-size: cover">
-  <div class="row nomargin">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
-      <h1>Choose your side !</h1>
-      <div class="col-sm-6">
-        <%= link_to businesses_home_path do %>
-        <i class="fa fa-briefcase fa-5x"></i>
-        <% end %>
+<div style="background-color:white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="banner-home" style="background-image: url(<%= image_url 'BackgroundModified' %>); ">
+           <div class="text-banner">
+            <h1> Rethink </h1>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <%= link_to influencers_home_path do %>
-        <i class="fa fa-bullhorn fa-5x"></i>
-        <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="right-container">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <div class="col-sm-6">
+              <%= link_to businesses_home_path do %>
+              <i class="fa fa-briefcase"></i>
+              <% end %>
+            </div>
+            <div class="col-sm-6">
+              <%= link_to influencers_home_path do %>
+              <i class="fa fa-bullhorn"></i>
+              <% end %>
+              <div class="text-banner-left">
+                <h1> Instagram posting </h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
