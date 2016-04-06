@@ -1,17 +1,18 @@
 class ApplicationsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create]
   def new
     @application = Application.new
   end
 
   def create
+    @influencer = Influencer.find_by_user_id(current_user)
     @campaign = Campaign.find(params[:campaign_id])
     @application = Application.new(application_params)
     @application.campaign = @campaign
-    @application.influencer = Influencer.find_by_user_id(current_user)
+    @application.influencer = @influencer
     @application.status = "Pending"
     if @application.save
-      flash[:notice] = "Congrats #{@influencer.username}, your application for #{@campaign.title} has been successfully created "
+      flash[:notice] = "Thanks #{@influencer.username}, you've just applied for #{@campaign.title}. Your application is under review, we'll get back to you shortly"
       redirect_to campaign_path(@campaign)
     else
       flash[:alert] = "Failed to create an application, try again"
@@ -24,7 +25,6 @@ class ApplicationsController < ApplicationController
   end
 
   def show
-    @application.campaign = @campaign
     @application = Application.find(params[:id])
     if @application == nil
       redirect_to campaign_path(@campaign)
