@@ -13,13 +13,5 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
-@import "businesses/index";
-@import "businesses/new";
-@import "businesses/show";
+@import "businesses";
 @import "campaigns";
-
-
-
-.body {
-  background-color: $gray-body;
-}
