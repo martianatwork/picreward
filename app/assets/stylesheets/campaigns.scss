@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#local_swaps_wrapper, #paid_jobs_wrapper {
+  background: $brand-blue;
+  padding: 0 10px 20px 10px;
+}
+
+#local_swaps_view, #paid_jobs_view {
+  background: $gray-body;
+  border-radius: 0 0 5px 5px;
+}
+
+.local_swaps, .paid_jobs {
+  margin: 20px 0 20px 0;
+}
+
 .outer {
     border:solid 1px #000;
     height:90vh;
@@ -34,6 +48,6 @@ margin-right: 0;
 }
 
 .nopadding {
-  padding-right: 9px;
+  padding-right: 0 !important;
   padding-left: 0 !important;
 }
