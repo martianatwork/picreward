@@ -6,8 +6,14 @@ class CampaignsController < ApplicationController
     @paid_jobs = Campaign.where(reward_type: "Paid Job")
     @local_swaps = Campaign.where(reward_type: "Local Swap")
     @markers = Gmaps4rails.build_markers(@local_swaps) do |campaign, marker|
+      marker_url = view_context.image_path("marker.png")
       marker.lat campaign.latitude
       marker.lng campaign.longitude
+      marker.picture({
+        url: marker_url,
+        width: 32,
+        height: 32
+       })
       marker.infowindow render_to_string(:partial => "/campaigns/map_box", locals: {campaign: campaign})
     end
   end

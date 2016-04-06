@@ -1,21 +1,21 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
 
-  <% if @campaign.reward_type == "Local" %>
+    <% if @campaign.reward_type == "Local Swap" %>
     <p><strong><%= @campaign.target_location %></strong></p>
-  <% end %>
+    <% end %>
 
-   <p><%= @campaign.title %></p>
-   <p><%= @campaign.product %></p>
-   <p><%= @campaign.goal %></p>
-   <p><%= @campaign.budget %></p>
-   <p><%= @campaign.start_time %></p>
-   <p><%= @campaign.end_time %></p>
-   <p><%= @campaign.description %></p>
-   <p><%= @campaign.instructions %></p>
-   <p><%= @campaign.pics_to_upload %></p>
-   <p><%= @campaign.pics_to_post %></p>
-   <p><%= @campaign.photo %></p>
+    <p><%= @campaign.title %></p>
+    <p><%= @campaign.product %></p>
+    <p><%= @campaign.goal %></p>
+    <p><%= @campaign.budget %></p>
+    <p><%= @campaign.start_time %></p>
+    <p><%= @campaign.end_time %></p>
+    <p><%= @campaign.description %></p>
+    <p><%= @campaign.instructions %></p>
+    <p><%= @campaign.pics_to_upload %></p>
+    <p><%= @campaign.pics_to_post %></p>
+    <p><%= @campaign.photo %></p>
 
   </div>
 </div>
