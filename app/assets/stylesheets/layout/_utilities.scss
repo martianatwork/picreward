@@ -42,3 +42,19 @@ body > .container {
   padding-top: 70px;
 }
 
+.button {
+  margin-left: 10px;
+  padding: 5px 20px;
+  border-radius: 2em;
+  color: #133959;
+  font-size: 14px;
+  border: 0.6px solid #133959;
+}
+.button:hover {
+  color: white;
+  text-decoration: none;
+  background: #1D8FF1;
+  border-color: #1D8FF1;
+  transition: 0.7s;
+}
+

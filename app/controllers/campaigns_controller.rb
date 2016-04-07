@@ -20,8 +20,19 @@ class CampaignsController < ApplicationController
   end
 
   def show
-    authorize @campaign
-    redirect_to new_campaign_application_path(@campaign)
+
+  @application = Application.new
+  @marker = Gmaps4rails.build_markers(@campaign) do |campaign, marker|
+      marker_url = view_context.image_path("marker.png")
+      marker.lat campaign.latitude
+      marker.lng campaign.longitude
+      marker.picture({
+        url: marker_url,
+        width: 32,
+        height: 32
+       })
+      marker.infowindow render_to_string(:partial => "/campaigns/map_box", locals: {campaign: campaign})
+    end
   end
 
   def new

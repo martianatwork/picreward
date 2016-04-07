@@ -1,28 +1,58 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
 
-    <% if @campaign.reward_type == "Local Swap" %>
-    <p><strong><%= @campaign.target_location %></strong></p>
-    <% end %>
+      <div class="campaign-box">
 
-    <p><%= @campaign.title %></p>
-    <p><%= @campaign.product %></p>
-    <p><%= @campaign.goal %></p>
-    <p><%= @campaign.budget %></p>
-    <p><%= @campaign.start_time %></p>
-    <p><%= @campaign.end_time %></p>
-    <p><%= @campaign.description %></p>
-    <p><%= @campaign.instructions %></p>
-    <p><%= @campaign.pics_to_upload %></p>
-    <p><%= @campaign.pics_to_post %></p>
-    <p><%= @campaign.photo %></p>
+        <% if @campaign.reward_type == "Local Swap" %>
+          <div id="small-map"></div>
+        <% end %>
 
+        <p><%= @campaign.photo %></p>
+
+        <h3><%= @campaign.title %></h3>
+        <p><%= @campaign.product %></p>
+        <p><%= @campaign.description %></p>
+        <p><%= @campaign.instructions %></p>
+        <p><strong>Goal</strong> <%= @campaign.goal %></p>
+        <p><strong>Budget</strong> <%= @campaign.budget %></p>
+        <p><strong>Start</strong> <%= @campaign.start_time %></p>
+        <p><strong>End</strong> <%= @campaign.end_time %></p>
+        <p><strong>Number of pics to upload</strong> <%= @campaign.pics_to_upload %></p>
+        <p><strong>Number of pics to post</strong> <%= @campaign.pics_to_post %></p>
+
+        <div class="campaign-box-bottom">
+          <%= link_to "See the Applications", campaign_applications_path(@campaign), class: "button" %>
+        </div>
+
+      </div>
+
+    </div>
   </div>
+  <div class="row">
 
-  <div class="col-sm-8 col-sm-offset-2 form-container">
-    <h1>Apply</h1>
-    <%= render 'applications/application_form' %>
+
+    <div class="col-sm-8 col-sm-offset-2 form-container">
+      <h3>Apply</h3>
+      <%= render 'applications/application_form' %>
+    </div>
+
   </div>
 </div>
 
-<%= link_to "See the Applications", campaign_applications_path(@campaign), class: "brand-button" %>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).on('ready', function() {
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {
+scrollwheel: false}, internal: { id: 'small-map' } }, function(){
+marker = handler.addMarkers(<%= raw @marker.to_json %>);
+handler.bounds.extendWith(marker);
+handler.fitMapToBounds();});})
+<% end %>
+<% end %>
+
+<%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.18&client=&key=AIzaSyAWTD7XXgfWzV60HCDVLL-71xV1yoH6lBQ&libraries=geometry&language=&hl=&region=" %>
+<%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
