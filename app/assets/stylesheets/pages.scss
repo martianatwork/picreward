@@ -1,3 +1,31 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.banner-home {
+  height: 100vh;
+  background-size: cover !important;
+  margin-top: 0px;
+  position: relative;
+  // margin-bottom: 150px;
+}
+
+.text-banner {
+position: absolute;
+top:100px;
+right: 30px;
+}
+
+.text-banner-left {
+position: absolute;
+top:100px;
+left: 30px;
+}
+
+.text-banner h1 {
+  font-size: 60px;
+}
+
+
+.right-container {
+  position: relative;
+}
