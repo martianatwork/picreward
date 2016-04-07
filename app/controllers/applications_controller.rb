@@ -35,10 +35,18 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @application.update(application_params)
+    redirect_to campaign_application_path(@application.campaign, @application)
+  end
+
   private
 
   def application_params
-    params.require(:application).permit(:motivation)
+    params.require(:application).permit(:motivation, :status)
   end
 
   def find_application

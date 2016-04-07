@@ -1,20 +1,13 @@
-<h1> Our Gang </h1>
-
-<div class="container">
-  <div class="row">
-    <% @businesses.each do |business| %>
-      <div class="col-xs-12 col-sm-5 col-md-4">
-        <div class="business-card">
-            <p><%= business.name%></p>
-            <div class="business-card-banner" style="background-image: url('http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif');"></div>
-            <p> #<%= (business.category).split.join %> </p>
-            <hr class="line">
-            <%= link_to business_path(business), class: "business-link" do %>
-              @Check Da Firm
-            <% end %>
-
-        </div>
-      </div>
+<h1 class="text-center" style="margin-bottom: 30px"> Businesses </h1>
+<% @businesses.each do |business| %>
+  <div class="business-card-container">
+    <p><%= business.name%></p>
+    <div class="business-card-banner" style="background-image: url('http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif');"></div>
+    <p> #<%= (business.category).split.join %> </p>
+    <hr class="line">
+    <%= link_to business_path(business), class: "business-link" do %>
+      <i class="fa fa-heart-o"></i>    Love it? Check it!
     <% end %>
+
   </div>
-</div>
+<% end %>
