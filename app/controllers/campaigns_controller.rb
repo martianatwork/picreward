@@ -1,8 +1,9 @@
 class CampaignsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_campaign, only: [:show, :edit, :update]
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = policy_scope(Campaign)
     @paid_jobs = Campaign.where(reward_type: "Paid Job")
     @local_swaps = Campaign.where(reward_type: "Local Swap")
     @markers = Gmaps4rails.build_markers(@local_swaps) do |campaign, marker|
@@ -19,6 +20,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
+
   @application = Application.new
   @marker = Gmaps4rails.build_markers(@campaign) do |campaign, marker|
       marker_url = view_context.image_path("marker.png")
@@ -35,10 +37,12 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    authorize @campaign
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
+    authorize @campaign
     if @campaign.save
       flash[:notice] = "Successfully created #{@campaign.title}"
       redirect_to campaign_path(@campaign)
@@ -49,11 +53,13 @@ class CampaignsController < ApplicationController
   end
 
   def edit
+    authorize @campaign
   end
 
 
   def update
     @campaign.update(campaign_params)
+    authorize @campaign
     redirect_to campaign_path(@campaign)
   end
 

@@ -1,13 +1,19 @@
 class BusinessesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_business_id, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @businesses = policy_scope(Business)
+  end
 
   def new
     @business = Business.new
+    authorize @business
   end
 
   def create
-    @business = Business.new(business_params)
-    @business.user = current_user
+    @business = current_user.businesses.new(business_params)
+    authorize @business
     if @business.save
       flash[:notice] = "Welcome Aboard, #{@business.name}!"
       redirect_to business_path(@business)
@@ -17,26 +23,26 @@ class BusinessesController < ApplicationController
     end
   end
 
-  def index
-    @businesses = Business.all
-  end
-
   def show
+    authorize @business
     if @business == nil
-      redirect_to businesses_new_path
+      redirect_to new_business_path
     end
   end
 
   def edit
+    authorize @business
   end
 
   def update
     @business.update(business_params)
+    authorize @business
     redirect_to business_path(@business)
   end
 
   def destroy
     @business.destroy
+    authorize @business
     flash[:notice] = "Bye #{@business.name}, All the best!"
     redirect_to root_path
   end

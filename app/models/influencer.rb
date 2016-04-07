@@ -6,6 +6,21 @@ class Influencer < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
+  validates :username, presence: true, uniqueness: true
+  validates :address, presence: true
+  validates :number, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+  def self.avg_photo_comments(token)
+    total = 0
+    client = Instagram.client(:access_token => token)
+    client.user_recent_media.each do |media_item|
+      total += media_item.comments[:count]
+    end
+    total / 20
+  end
+
 
   def self.create_for(user)
    comments_count = 0
