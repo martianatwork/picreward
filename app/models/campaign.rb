@@ -5,7 +5,6 @@ class Campaign < ActiveRecord::Base
   geocoded_by :target_location
   after_validation :geocode, if: :target_location_changed?
   validates :reward_type, presence: true
-  validates :target_location, presence: true
   validates :title, presence: true
   validates :product, presence: true
   validates :goal, presence: true
