@@ -1,24 +1,22 @@
 <div class="banner-home">
   <div class="left-side">
     <div class="hand-bckg">
-      <div class="hand-bckg-1" id="2" style="background-image: url(<%= image_url 'PicHandMuffin' %>) display: block; opacity: 1;">
-      </div>
-      <div class="hand-bckg-2" data-num="2" style="background-image: url(<%= image_url 'PicHandShoes' %>); display: none; opacity: 0;">
-      </div>
+      <%= image_tag 'PicHandMuffin.png' %>
+      <%= image_tag 'PicHandWaffle.png' %>
+      <%= image_tag 'PicHandShoes.png' %>
     </div>
     <div class="bckg">
-      <div class="bckg-1" id="banner-home-1" style="background-image: url(<%= image_url 'Muffin' %>); display: block; opacity: 1;">
-      </div>
-      <div class="bckg-2" data-num="2" style="background-image: url(<%= image_url 'Shoes' %>); display: none; opacity: 0;">
-      </div>
+      <%= image_tag 'Muffin.jpg' %>
+      <%= image_tag 'Waffle.jpg' %>
+      <%= image_tag 'Shoes.jpg' %>
     </div>
   </div>
   <div class="right-side">
     <%= link_to businesses_home_path do %>
-    <i class="fa fa-briefcase"></i>
+    BUSINESS?
     <% end %>
     <%= link_to influencers_home_path do %>
-    <i class="fa fa-bullhorn"></i>
+    INFLUENCER?
     <% end %>
     <div>
       <h1> Instagram posting </h1>
