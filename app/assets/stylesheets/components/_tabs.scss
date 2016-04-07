@@ -1,7 +1,6 @@
 .tabs {
-  background: $brand-blue;
+  background: $gray-light;
   display: flex;
-  padding: 10px 10px 0 10px
 }
 .tabs a {
   color: black;
@@ -14,19 +13,19 @@
 .tabs h3 {
   font-size: 17px;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 5px;
 }
 .tab {
   background: $gray-light;
-  flex: 0 0 50%;
+  flex: 0 0 25%;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 .tab:first-child {
-  border-radius: 5px 0 0 0;
+  border-radius: 4px 0 0 0;
 }
 .tab:last-child {
-  border-radius: 0 5px 0 0;
+  border-radius: 0 4px 0 0;
 }
 .tab.active {
   background: $gray-body;

@@ -1,12 +1,11 @@
 <div class="row">
-  <div class="col-xs-12 nopadding">
 
     <div class="tabs">
       <a class="tab active" data-target="#local_swaps_wrapper">
-        <h3>Local Swaps</h3>
+        <h3><i class="fa fa-compass"></i>  Local Swaps</h3>
       </a>
       <a class="tab" data-target="#paid_jobs_wrapper">
-        <h3>Paid Jobs</h3>
+        <h3><i class="fa fa-money"></i>  Paid Jobs</h3>
       </a>
     </div>
 
@@ -17,22 +16,31 @@
           <div class="row nomargin">
             <div class="col-xs-12 col-md-7 leftcol">
 
-              <div class="local_swaps">
+              <div class="row">
 
-                <ul>
-                  <% @local_swaps.each do |campaign| %>
-                  <%= link_to campaign_path(campaign) do %>
-                  <li><%= campaign.reward_type %> - <%= campaign.title %> <%= campaign.product %></li>
-                  <% end %>
-                  <% end %>
-                </ul>
+              <div class="local_swaps">
+                <% @local_swaps.each do |campaign| %>
+                <div class="col-xs-12 col-sm-5 col-md-4">
+                <div class="campaign-card">
+                    <p><%= campaign.title%></p>
+                    <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/300/?random');"></div>
+                    <p> #<%= (campaign.product).split.join %> </p>
+                    <hr class="line">
+                    <%= link_to campaign_path(campaign), class: "campaign-link" do %>
+                    @Check Da Campaign
+                    <% end %>
+
+                  </div>
+                </div>
+                <% end %>
+              </div>
 
               </div>
 
             </div>
-            <div class="col-xs-12 col-md-5 rightcol nopadding">
+            <div class="col-xs-12 col-md-5 rightcol">
 
-              <div id="map" style='width: 100%; height: 99%;'></div>
+              <div id="map" style='width: 100%; height: 100%;'></div>
 
               <% content_for(:after_js) do %>
               <%= javascript_tag do %>
@@ -61,13 +69,24 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
               <div class="paid_jobs">
-                <ul>
-                  <% @paid_jobs.each do |campaign| %>
-                  <%= link_to campaign_path(campaign) do %>
-                  <li><%= campaign.reward_type %> - <%= campaign.title %> <%= campaign.product %></li>
-                  <% end %>
-                  <% end %>
-                </ul>
+
+                <div class="row">
+                <% @paid_jobs.each do |campaign| %>
+                <div class="col-xs-12 col-sm-5 col-md-4">
+                <div class="campaign-card">
+                    <p><%= campaign.title%></p>
+                    <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/200/?random');"></div>
+                    <p> #<%= (campaign.product).split.join %> </p>
+                    <hr class="line">
+                    <%= link_to campaign_path(campaign), class: "campaign-link" do %>
+                    @Check Da Campaign
+                    <% end %>
+
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
               </div>
 
             </div>
@@ -76,7 +95,6 @@
       </div>
     </div>
 
-  </div>
 </div>
 
 <%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.18&client=&key=AIzaSyAWTD7XXgfWzV60HCDVLL-71xV1yoH6lBQ&libraries=geometry&language=&hl=&region=" %>
