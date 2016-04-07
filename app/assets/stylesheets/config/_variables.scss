@@ -32,9 +32,14 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 
+$brand-orange: #FFA000;
+
+$secondary-orange: #E7853D;
+$gray-medium: #9E9E9E;
+$blue-gray:  #263238;
+
 
 //blue gradient
-
 $brand-blue: #133959;
 $secondary-blue: #608BAC;
 $flashy-blue: #1D8FF1;
@@ -42,8 +47,8 @@ $flashy-blue: #1D8FF1;
 
 
 // Gray scale
-$gray-darker:  lighten(#000, 13.5%); // #222
-$gray-dark:    lighten(#000, 20%);   // #333
+ // #222
+   // #333
 $gray-body:    #FAFAFA; // #555
 $gray-light:   #EDEDED; // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
