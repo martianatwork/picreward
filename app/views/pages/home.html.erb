@@ -1,36 +1,27 @@
-<div style="background-color:white">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <div class="banner-home" style="background-image: url(<%= image_url 'BackgroundModified' %>); ">
-           <div class="text-banner">
-            <h1> Rethink </h1>
-          </div>
-        </div>
+<div class="banner-home">
+  <div class="left-side">
+    <div class="hand-bckg">
+      <div class="hand-bckg-1" id="2" style="background-image: url(<%= image_url 'PicHandMuffin' %>) display: block; opacity: 1;">
+      </div>
+      <div class="hand-bckg-2" data-num="2" style="background-image: url(<%= image_url 'PicHandShoes' %>); display: none; opacity: 0;">
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="row">
-        <div class="right-container">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <div class="col-sm-6">
-              <%= link_to businesses_home_path do %>
-              <i class="fa fa-briefcase"></i>
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <%= link_to influencers_home_path do %>
-              <i class="fa fa-bullhorn"></i>
-              <% end %>
-              <div class="text-banner-left">
-                <h1> Instagram posting </h1>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="bckg">
+      <div class="bckg-1" id="banner-home-1" style="background-image: url(<%= image_url 'Muffin' %>); display: block; opacity: 1;">
+      </div>
+      <div class="bckg-2" data-num="2" style="background-image: url(<%= image_url 'Shoes' %>); display: none; opacity: 0;">
       </div>
     </div>
   </div>
-</div>
+  <div class="right-side">
+    <%= link_to businesses_home_path do %>
+    <i class="fa fa-briefcase"></i>
+    <% end %>
+    <%= link_to influencers_home_path do %>
+    <i class="fa fa-bullhorn"></i>
+    <% end %>
+    <div>
+      <h1> Instagram posting </h1>
+    </div>
+  </div>
 </div>

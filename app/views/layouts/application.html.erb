@@ -14,9 +14,7 @@
 
     <%= render 'shared/flashes' %>
 
-      <div class="container padded">
-      <%= yield %>
-      </div>
+    <%= yield %>
 
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
