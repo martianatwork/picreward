@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#map {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+}
+
+#small-map {
+  margin: auto;
+  display: flex;
+  height: 50vh;
+  width: 90%;
+}
+
+// Index
+
 .local_swaps, .paid_jobs {
   margin: 20px;
 }
@@ -21,3 +36,19 @@
   margin-left: 0;
   margin-right: 0
 }
+
+// Show
+
+.campaign-box {
+  background: white;
+  border: 1px solid $gray-light;
+  margin-top: 20px;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.campaign-box-bottom {
+  text-align: center;
+  margin-top: 30px;
+}
+
