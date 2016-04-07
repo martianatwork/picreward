@@ -25,7 +25,7 @@ class BusinessesController < ApplicationController
 
   def show
     if @business == nil
-      redirect_to businesses_new_path
+      redirect_to new_business_path
     end
   end
 

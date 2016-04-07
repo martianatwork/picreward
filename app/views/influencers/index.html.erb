@@ -1,0 +1,13 @@
+<h1 class="text-center" style="margin-bottom: 30px"> Businesses </h1>
+<% @influencers.each do |influencer| %>
+  <div class="business-card-container">
+    <p><%= influencer.username%></p>
+    <div class="business-card-banner" style="background-image: url('http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif');"></div>
+    <p> #<%= influencer.first_name %> </p>
+    <hr class="line">
+    <%= link_to influencer_path(influencer), class: "business-link" do %>
+      <i class="fa fa-heart-o"></i>    Love it? Check it!
+    <% end %>
+
+  </div>
+<% end %>
