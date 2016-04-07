@@ -7,20 +7,9 @@ Rails.application.routes.draw do
   resources :businesses
 
 
-  get 'applications/create'
-
-  get 'applications/new'
-
-  get 'applications/update'
-
-  get 'applications/show'
-
-  get 'applications/edit'
-
-  get 'applications/index'
-
-  resources :campaigns
-
+  resources :campaigns do
+    resources :applications
+  end
 
   resources :influencers
 

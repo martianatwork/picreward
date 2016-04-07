@@ -6,13 +6,20 @@ class CampaignsController < ApplicationController
     @paid_jobs = Campaign.where(reward_type: "Paid Job")
     @local_swaps = Campaign.where(reward_type: "Local Swap")
     @markers = Gmaps4rails.build_markers(@local_swaps) do |campaign, marker|
+      marker_url = view_context.image_path("marker.png")
       marker.lat campaign.latitude
       marker.lng campaign.longitude
+      marker.picture({
+        url: marker_url,
+        width: 32,
+        height: 32
+       })
       marker.infowindow render_to_string(:partial => "/campaigns/map_box", locals: {campaign: campaign})
     end
   end
 
   def show
+  @application = Application.new
   end
 
   def new
@@ -22,10 +29,10 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
-      flash[:notice] = "Successfully created #{Campaign.title}"
+      flash[:notice] = "Successfully created #{@campaign.title}"
       redirect_to campaign_path(@campaign)
     else
-      flash[:alert] = "Failed to create #{Campaign.title}"
+      flash[:alert] = "Failed to create #{@campaign.title}"
       render :new
     end
   end
@@ -42,7 +49,7 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:title, :product, :goal, :start_time, :end_time, :description, :instructions, :budget, :pics_to_upload, :pics_to_post, :photo, :photo_cache)
+    params.require(:campaign).permit(:reward_type, :title, :product, :goal, :start_time, :end_time, :description, :instructions, :budget, :pics_to_upload, :pics_to_post, :photo, :photo_cache)
   end
 
   def find_campaign

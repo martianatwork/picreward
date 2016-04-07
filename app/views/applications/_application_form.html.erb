@@ -1,0 +1,7 @@
+<%= simple_form_for [@campaign, @application] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :motivation, as: :text  %>
+
+  <%= f.button :submit %>
+<% end %>

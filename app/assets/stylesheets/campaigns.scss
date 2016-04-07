@@ -2,38 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.outer {
-    border:solid 1px #000;
-    height:90vh;
-    overflow:hidden;
-
+.local_swaps, .paid_jobs {
+  margin: 20px;
 }
+
 .rightcol {
-  /* position: fixed;
-   top: 0%;
-   left: 0%; */
-   // border:solid 4px green;
-   height:90vh;
-   // overflow:hidden;
+ height: 80vh;
+ padding-right: 0;
+ padding-left: 0;
 }
 
 .leftcol {
-   /* border:solid 1px red;
-   position: relative;
-   top: 0%;
-   left: 50%;  */
-   // border:solid 4px red;
-   overflow-y: auto;
-   height: 90vh;
+ overflow-y: auto;
+ height: 80vh;
 }
 
 .nomargin {
-margin-left: 0;
-margin-right: 0;
-
-}
-
-.nopadding {
-  padding-right: 9px;
-  padding-left: 0 !important;
+  margin-left: 0;
+  margin-right: 0
 }
