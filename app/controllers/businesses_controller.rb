@@ -26,7 +26,7 @@ class BusinessesController < ApplicationController
   def show
     authorize @business
     if @business == nil
-      redirect_to businesses_new_path
+      redirect_to new_business_path
     end
   end
 
