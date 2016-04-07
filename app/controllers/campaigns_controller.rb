@@ -20,9 +20,9 @@ class CampaignsController < ApplicationController
   end
 
   def show
-
-  @application = Application.new
-  @marker = Gmaps4rails.build_markers(@campaign) do |campaign, marker|
+    authorize @campaign
+    @application = Application.new
+    @marker = Gmaps4rails.build_markers(@campaign) do |campaign, marker|
       marker_url = view_context.image_path("marker.png")
       marker.lat campaign.latitude
       marker.lng campaign.longitude
