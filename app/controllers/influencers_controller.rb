@@ -7,6 +7,7 @@ class InfluencersController < ApplicationController
   end
 
   def show
+    authorize @influencer
   end
 
   def new

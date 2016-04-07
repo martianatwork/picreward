@@ -28,6 +28,7 @@ class ApplicationsController < ApplicationController
   end
 
   def show
+    authorize @application
     @campaign = Campaign.find(params[:campaign_id])
     if @application == nil
       redirect_to campaign_path(@campaign)

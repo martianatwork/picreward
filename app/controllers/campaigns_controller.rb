@@ -20,7 +20,8 @@ class CampaignsController < ApplicationController
   end
 
   def show
-  redirect_to new_campaign_application(@campaign)
+    authorize @campaign
+    redirect_to new_campaign_application(@campaign)
   end
 
   def new
