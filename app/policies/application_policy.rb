@@ -1,4 +1,4 @@
-class ApplicationPolicy < BosePolicy
+class ApplicationPolicy < BasePolicy
   class Scope < Scope
     def resolve
       scope.all
