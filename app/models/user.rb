@@ -1,25 +1,22 @@
 class User < ActiveRecord::Base
   include InfluencersHelper
-  # after_create :initialize_influencer
+  after_create :initialize_influencer
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:instagram]
 
-# def initialize_influencer
-#   influencer = Influencer.create(
-#   user_id: self.id,
-#   avg_photo_comments: Influencer.avg_photo_comments(self.token),
-#   avg_photo_likes: Influencer.avg_photo_likes(self.token),
-#   followers: Influencer.followers(self.token),
-#   username: Influencer.username(self.token)
-#   )
+  def influencer?
+    provider == 'instagram'
+  end
+#pk pas en dessous de init influencer
 
-#   influencer.top_hashtags(token)
-#   influencer.top_places(token)
-      # influencer.save!
-# end
+def initialize_influencer
+  if(influencer?)
+    Influencer.create_for(self)
+  end
+end
 
 def self.find_for_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -30,6 +27,12 @@ def self.find_for_oauth(auth)
       # user.token_expiry = Time.at(auth.credentials.expires_at)
       user.email = auth.info.nickname + "@example.com"
       user.save!
+
+#est-ce que je dois renvoyer vers influencer.create?
+#ou vers le moel de Influencer?
+#Best Practices?
+#Comment récupérer l'id de l'objet
+#Refacto pour appeler une fois l'API
     end
     # influencer = Influencer.create(
     #   user_id: 5,
