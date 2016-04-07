@@ -1,0 +1,23 @@
+.container-instagram {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.insta-pic {
+  background: url('http://cs306907.vk.me/v306907469/5c7e/sZxOUvkycNY.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center-top;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.insta-description {
+  height: 100vh;
+  background-color: white
+}
+
