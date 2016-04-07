@@ -23,6 +23,8 @@ gem 'instagram'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "gemoji"
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

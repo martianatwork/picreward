@@ -10,16 +10,24 @@
       <%= image_tag 'Waffle.jpg' %>
       <%= image_tag 'Shoes.jpg' %>
     </div>
+    <div class="left-text">
+      <h1>Rethink</h1>
+    </div>
   </div>
   <div class="right-side">
-    <%= link_to businesses_home_path do %>
-    BUSINESS?
-    <% end %>
-    <%= link_to influencers_home_path do %>
-    INFLUENCER?
-    <% end %>
-    <div>
+    <div class="right-text">
       <h1> Instagram posting </h1>
+    </div>
+    <div class="text-center-bottom">
+      <h1>  <%= link_to businesses_home_path do %>
+        <%= Emoji.find_by_alias("european_post_office").raw %>
+        <% end %>
+
+
+      <%= link_to influencers_home_path do %>
+        <%= Emoji.find_by_alias("iphone").raw %>
+        <% end %>
+      </h1>
     </div>
   </div>
 </div>
