@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get 'pages/home', to: 'pages#home', as: :home
+  get 'home', to: 'pages#home', as: :home
 
-  get 'pages/influencers_home', to: 'pages#influencers_home', as: :influencers_home
+  get 'influencers_home', to: 'pages#influencers_home', as: :influencers_home
 
-  get 'pages/businesses_home', to: 'pages#businesses_home', as: :businesses_home
+  get 'businesses_home', to: 'pages#businesses_home', as: :businesses_home
 
   resources :businesses
 
