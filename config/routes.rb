@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'pages/influencers_home', to: 'pages#influencers_home', as: :influencers_home
+  root to: 'pages#home'
 
-  get 'pages/businesses_home', to: 'pages#businesses_home', as: :businesses_home
+  get 'home', to: 'pages#home', as: :home
+
+  get 'influencers_home', to: 'pages#influencers_home', as: :influencers_home
+
+  get 'businesses_home', to: 'pages#businesses_home', as: :businesses_home
 
   resources :businesses
-
 
   resources :campaigns do
     resources :applications
@@ -14,7 +17,6 @@ Rails.application.routes.draw do
   resources :influencers
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
