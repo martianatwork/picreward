@@ -44,25 +44,28 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #1D8FF1;
   text-decoration: none;
+  transition: 0.3s;
+
 }
 
 /* Navbar right button */
-.navbar-wagon-button {
+.brand-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
+  border-radius: 2em;
   line-height: 40px;
-  background-color: #D23333;
-  color: white;
+  // background-color: #133959;
+  color: #133959;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 0.6px solid #133959;
 }
-.navbar-wagon-button:hover {
+.brand-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #1D8FF1;
+  border-color: #1D8FF1;
+  transition: 0.7s;
 }
 
 /* Navbar search form */
