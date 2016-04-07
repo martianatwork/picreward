@@ -8,8 +8,6 @@
           <div id="small-map"></div>
         <% end %>
 
-        <p><%= @campaign.photo %></p>
-
         <h3><%= @campaign.title %></h3>
         <p><%= @campaign.product %></p>
         <p><%= @campaign.description %></p>
@@ -20,6 +18,10 @@
         <p><strong>End</strong> <%= @campaign.end_time %></p>
         <p><strong>Number of pics to upload</strong> <%= @campaign.pics_to_upload %></p>
         <p><strong>Number of pics to post</strong> <%= @campaign.pics_to_post %></p>
+
+        <div class="campaign-box-photo">
+        <%= cl_image_tag @campaign.photo, class:"img-responsive" %>
+        </div>
 
         <div class="campaign-box-bottom">
           <%= link_to "See the Applications", campaign_applications_path(@campaign), class: "button" %>
