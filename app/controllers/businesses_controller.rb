@@ -1,5 +1,4 @@
 class BusinessesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_business, only: [:show, :edit, :update, :destroy]
 
   def index

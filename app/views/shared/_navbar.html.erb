@@ -22,7 +22,7 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
 
-        <% if current_user.influencer.present? %>
+        <% if current_user.influencer %>
 
         <%= cl_image_tag current_user.influencer.photo, width: 50, height: 50, crop: :fill, class: "avatar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -38,7 +38,7 @@
           </li>
         </ul>
 
-        <% elsif current_user.business.present? %>
+        <% elsif current_user.business %>
 
         <%= cl_image_tag current_user.business.photo, width: 50, height: 50, crop: :fill, class: "avatar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -83,7 +83,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <% if user_signed_in? && current_user.influencer.present? %>
+    <% if user_signed_in? && current_user.influencer %>
       <%= link_to t(".top_call_to_action", default: "See Jobs"), campaigns_path, class: "navbar-wagon-item brand-button btn" %>
     <% elsif user_signed_in? && current_user.business.present? %>
       <%= link_to t(".top_call_to_action", default: "Create Campaign"), new_campaign_path, class: "navbar-wagon-item brand-button btn" %>
@@ -96,7 +96,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
-        <% if user_signed_in? && current_user.influencer.present? %>
+        <% if user_signed_in? && current_user.influencer %>
           <li>
             <%= link_to influencer_path(current_user) do %>
             <i class="fa fa-user"></i> <%= t ".profile", default: "My Dashboard" %>
@@ -108,7 +108,7 @@
             <% end %>
           </li>
 
-        <% elsif user_signed_in? && current_user.business.present? %>
+        <% elsif user_signed_in? && current_user.business %>
           <li>
             <%= link_to business_path(current_user) do %>
             <i class="fa fa-user"></i> <%= t ".profile", default: "My Dashboard" %>
