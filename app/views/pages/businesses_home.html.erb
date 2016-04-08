@@ -1,10 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
+<div class="wrapper-influencer-home">
+  <p class="text-center title-swipebox">Target Advertising</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 container-instagram-influencer-home">
+        <div class="insta-pic-influencer-home col-xs-7">
 
-      <h1>Businesses</h1>
+        </div>
+        <div class="col-xs-4 insta-description">
+          <h2 class="text-center">Private Advertising has just been boosted</h2>
+          <hr class="hr-influencer-home">
+          <h4>1. Create a campaign</h4>
+          <h4>2. Validates influencers interessed in your campaign</h4>
 
+          <p class="influencer-home-emojis"> PicReward
+          <%= Emoji.find_by_alias("sunglasses").raw %>
+          <%= Emoji.find_by_alias("rocket").raw %>
+          <%= Emoji.find_by_alias("eyes").raw %>
+          <%= Emoji.find_by_alias("moneybag").raw %>
+          </p>
+          <%= link_to "Check out Influencer", influencers_path, class: "button-influencer-home brand-button" %>
 
+        </div>
+      </div>
     </div>
   </div>
 </div>
