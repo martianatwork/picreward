@@ -7,10 +7,10 @@ class Influencer < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   validates :username, presence: true, uniqueness: true
-  validates :address, presence: true
-  validates :number, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  # validates :address, presence: true
+  # validates :number, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
 
   def self.avg_photo_comments(token)
     total = 0
