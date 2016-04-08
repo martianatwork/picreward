@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include InfluencersHelper
   after_create :initialize_influencer
+  has_one :influencer, dependent: :destroy
+  has_one :business, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

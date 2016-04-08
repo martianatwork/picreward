@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_business_id, only: [:show, :edit, :update, :destroy]
+  before_action :find_business, only: [:show, :edit, :update, :destroy]
 
   def index
     @businesses = policy_scope(Business)
@@ -12,22 +12,20 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business = current_user.businesses.new(business_params)
+    @business = Business.new(business_params)
+    @business.user = current_user
     authorize @business
     if @business.save
       flash[:notice] = "Welcome Aboard, #{@business.name}!"
       redirect_to business_path(@business)
     else
       flash[:alert] = "Invalid parameters, try again"
-      render :new
+      redirect_to new_business_path
     end
   end
 
   def show
     authorize @business
-    if @business == nil
-      redirect_to new_business_path
-    end
   end
 
   def edit
@@ -50,11 +48,11 @@ class BusinessesController < ApplicationController
 
   private
 
-  def find_business_id
+  def find_business
     @business = Business.find_by_user_id(current_user)
   end
 
   def business_params
-    params.require(:business).permit(:name, :address, :category, :tva, :contact_name, :logo)
+    params.require(:business).permit(:name, :address, :category, :tva, :contact_name, :photo, :photo_cache)
   end
 end

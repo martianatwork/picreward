@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :businesses
 
   resources :campaigns do
-    resources :applications
+    resources :applications, only: [:index, :show, :new, :create, :edit, :update]
   end
 
   resources :influencers

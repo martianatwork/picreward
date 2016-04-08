@@ -7,6 +7,7 @@ class Influencer < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
+
   # validates :username, presence: true, uniqueness: true
   # validates :address, presence: true
   # validates :number, presence: true

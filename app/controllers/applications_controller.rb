@@ -2,14 +2,28 @@ class ApplicationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_application, only: [:show, :edit, :update]
 
+  def index
+    @applications = policy_scope(Application)
+  end
+
+  def show
+    authorize @application
+    @campaign = Campaign.find(params[:campaign_id])
+    if @application == nil
+      redirect_to campaign_path(@campaign)
+    end
+  end
+
   def new
     @application = Application.new
+    authorize @application
   end
 
   def create
     @influencer = Influencer.find_by_user_id(current_user)
     @campaign = Campaign.find(params[:campaign_id])
     @application = Application.new(application_params)
+    authorize @application
     @application.campaign = @campaign
     @application.influencer = @influencer
     @application.status = "Pending"
@@ -22,24 +36,13 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  def index
-    # @campaign = Campaign.find(params[:campaign_id])
-    @applications = Application.all
-  end
-
-  def show
-    authorize @application
-    @campaign = Campaign.find(params[:campaign_id])
-    if @application == nil
-      redirect_to campaign_path(@campaign)
-    end
-  end
-
   def edit
+    authorize @application
   end
 
   def update
     @application.update(application_params)
+    authorize @application
     redirect_to campaign_application_path(@application.campaign, @application)
   end
 
