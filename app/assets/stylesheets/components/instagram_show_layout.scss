@@ -3,8 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  margin-top: 50px;
 }
 
 .insta-pic {
@@ -12,12 +10,17 @@
   height: 100%;
   background-size: cover;
   background-position: center-top;
-  height: 100vh;
+  height: 80vh;
   background-repeat: no-repeat;
 }
 
 .insta-description {
-  height: 100vh;
+  height: 80vh;
   background-color: white
+}
+.wrapper-influencer-show {
+  background-color: $gray-light;
+  opacity: 0.8;
+  max-height: 100vh;
 }
 

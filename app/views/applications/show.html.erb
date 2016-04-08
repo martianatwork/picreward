@@ -1,19 +1,23 @@
 
 <h1 class="text-center"> Application #<%= @application.id %> </h1>
-<div class="container">
-  <div class="row">
+<div class="container app-show-container">
+    <div class="app-show-row">
 
 
-      <div class="col-xs-12 col-sm-6">
-        <div class="form-container col-xs-12" style="margin-bottom:0px">
-          <img src="#{<%= @application.influencer.photo %>}" alt="" class="text-center" style="border-radius: 50%; width: 130px; padding: 20px; margin-left: 180px;">
+      <div class=" app-show-left-container">
+        <div class="form-container" style="margin-bottom:0px">
+          <div class="app-infos-container">
+            <img src="#{<%= @application.influencer.photo %>}" alt="" class="text-center avatar-app">
+          </div>
           <p class="text-center"><%= @application.influencer.username %> </p>
           <h4 class="text-center" style="margin-top: 50px">Top Posts</h4>
-          <img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="src" style="border-radius: 40px; width: 125px;margin-left: 60px; padding: 20px">
-          <img src="https://www.reverbcity.com/arquivos/uploads/blog/2973.jpg" alt="" class="src" style="border-radius: 40px; width: 125px; padding: 20px">
-          <img src="http://girlsonmyfeet.com/wp-content/uploads/2015/10/adidas-yeezyboost.jpg" alt="" class="src" style="border-radius: 40px; width: 125px; padding: 20px">
+          <div class="app-top-pic-container">
+            <img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="app-top-pic">
+            <img src="https://www.reverbcity.com/arquivos/uploads/blog/2973.jpg" alt="" class="app-top-pic" >
+            <img src="http://girlsonmyfeet.com/wp-content/uploads/2015/10/adidas-yeezyboost.jpg" alt="" class="app-top-pic" >
+          </div>
         </div>
-        <div class="form-container col-xs-12" style=" padding-top: 20px; padding-left: 30px; display: flex; justify-content: space-between; align-items: center">
+        <div class="app-show-status form-container">
           <div>
             <h4>Status</h4>
             <p><%= @application.status %>ed</p>
@@ -32,30 +36,29 @@
       </div>
 
 
-      <div class="col-xs-12 col-sm-6">
-        <div class="form-container">
+        <div class="form-container app-show-right-container">
           <h3>Infos</h3><br>
 
           <p>
-          <div class="flexbox" style="display: flex; justify-content: space-between; ">
+          <div class="flexbox-app-show">
             <a>Average Comments/photo:</a> <a><%= @application.influencer.avg_photo_comments %></a>
           </div>
           </p>
 
           <p>
-          <div class="flexbox" style="display: flex; justify-content: space-between; ">
+          <div class="flexbox-app-show">
           <a>Average Likes/photo:</a> <a><%= @application.influencer.avg_photo_likes %></a>
           </div>
           </p>
 
           <p>
-          <div class="flexbox" style="display: flex; justify-content: space-between; ">
+          <div class="flexbox-app-show">
           <a>Followers:</a> <a><%=@application.influencer.followers %></a>
           </div>
           </p>
 
           <p>
-          <div class="flexbox" style="display: flex; justify-content: space-between; ">
+          <div class="flexbox-app-show">
           <a>Most Used Tag:</a> <a>#<%= Tag.find(@application.influencer_id).name %></a>
           </div>
           </p><br>
@@ -63,7 +66,6 @@
           <h4>Motivation Speech</h4>
           <p><%= @application.motivation %></p><br>
       </div>
-    </div>
   </div>
 </div>
 

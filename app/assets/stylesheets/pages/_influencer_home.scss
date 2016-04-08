@@ -1,0 +1,51 @@
+.influencer-home-flexbox {
+  display: flex;
+  background-color: white;
+}
+
+.wrapper-influencer-home {
+  background-color: $gray-light;
+  opacity: 0.8;
+  max-height: 120vh;
+}
+
+.title-swipebox{
+  color: $brand-blue;
+  padding-top: 30px;
+  font-size: 50px;
+  font-family: $base-font;
+  margin-bottom: 0;
+}
+.wrapper-influencer-home h2 {
+  color: #C22F2F;
+  margin-bottom: 30px;
+  font-family: $base-font
+}
+.wrapper-influencer-home h4 {
+  color: black;
+  margin-bottom: 50px;
+  font-family: $base-font;
+  padding-left: 10px;
+}
+.wrapper-influencer-home p {
+  color: #3D71A0;
+  font-family: $base-font;
+  font-weight: bolder;
+  padding-left: 10px;
+}
+.influencer-home-emojis {
+  margin-bottom: 50px
+}
+
+.hr-influencer-home {
+  margin-bottom: 50px
+}
+
+.button-influencer-home {
+  margin-left: 100px;
+  padding: 10px;
+}
+
+
+
+

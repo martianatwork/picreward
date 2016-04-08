@@ -18,7 +18,7 @@ class ApplicationsController < ApplicationController
       redirect_to campaign_path(@campaign)
     else
       flash[:alert] = "Failed to create an application, try again"
-      render :new
+      redirect_to campaign_path(@campaign)
     end
   end
 
