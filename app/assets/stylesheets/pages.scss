@@ -3,28 +3,148 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .banner-home {
   height: 100vh;
-  background-size: cover !important;
-  margin-top: 0px;
-  position: relative;
+  // margin-top: 0px;
+  display: flex;
   // margin-bottom: 150px;
 }
 
-.text-banner {
-position: absolute;
-top:100px;
-right: 30px;
+.left-side{
+flex: 1;
+position:relative;
 }
 
-.text-banner-left {
-position: absolute;
-top:100px;
-left: 30px;
+.right-side{
+flex: 1;
+position:relative;
+
 }
 
-.text-banner h1 {
+
+.hand-bckg img {
+  position:absolute;
+  right:0;
+  bottom: 0;
+  height:80%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.bckg img:nth-of-type(3),
+.bckg img:nth-of-type(2) {
+  height:100%;
+}
+
+.bckg img:nth-of-type(1) {
+  width:100%;
+  // size:150%;
+  // display: block;
+}
+
+.bckg img {
+  position:absolute;
+  right:0;
+  height:100%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+
+@keyframes FadeInOut {
+  0% {
+    opacity:1;
+  }
+  25% {
+    opacity:1;
+  }
+  33% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.hand-bckg img:nth-of-type(1),
+.bckg img:nth-of-type(1)
+ {
+  animation-delay: 8s;
+}
+.hand-bckg img:nth-of-type(2),
+.bckg img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+.hand-bckg img:nth-of-type(3),
+.bckg img:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+
+.hand-bckg img,
+.bckg img {
+animation-name: FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 12s;
+// animation-direction: alternate;
+}
+
+.text-center-bottom h1 {
   font-size: 60px;
 }
 
-.right-container {
-  position: relative;
+
+.text-center-bottom h1:hover{
+  text-decoration: none;
+  font-size:70px;
+  transition:1s;
 }
+
+.left-text {
+position: absolute;
+right: 30px;
+top: 40px;
+color: white;
+z-index: 2;
+
+}
+
+.right-text {
+position: absolute;
+left: 30px;
+top: 40px;
+color: $gray-medium;
+// z-index: 2;
+
+}
+
+// .text-banner {
+//   position: absolute;
+//   top:100px;
+//   right: 30px;
+// }
+
+// .text-banner-left {
+//   position: absolute;
+//   top:100px;
+//   left: 30px;
+// }
+
+
+
+.text-center-bottom {
+position: absolute;
+bottom: 250px;
+left: 250px;
+
+text-align: center;
+}
+

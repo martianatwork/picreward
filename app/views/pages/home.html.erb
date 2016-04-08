@@ -1,36 +1,33 @@
-<div style="background-color:white">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <div class="banner-home" style="background-image: url(<%= image_url 'BackgroundModified.png' %>); ">
-           <div class="text-banner">
-            <h1> Rethink </h1>
-          </div>
-        </div>
-      </div>
+<div class="banner-home">
+  <div class="left-side">
+    <div class="hand-bckg">
+      <%= image_tag 'PicHandMuffin.png' %>
+      <%= image_tag 'PicHandWaffle.png' %>
+      <%= image_tag 'PicHandShoes.png' %>
     </div>
-    <div class="col-md-6">
-      <div class="row">
-        <div class="right-container">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <div class="col-sm-6">
-              <%= link_to businesses_home_path do %>
-              <i class="fa fa-briefcase"></i>
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <%= link_to influencers_home_path do %>
-              <i class="fa fa-bullhorn"></i>
-              <% end %>
-              <div class="text-banner-left">
-                <h1> Instagram posting </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="bckg">
+      <%= image_tag 'Muffin.jpg' %>
+      <%= image_tag 'Waffle.jpg' %>
+      <%= image_tag 'Shoes.jpg' %>
+    </div>
+    <div class="left-text">
+      <h1>Rethink</h1>
     </div>
   </div>
-</div>
+  <div class="right-side">
+    <div class="right-text">
+      <h1> Instagram posting </h1>
+    </div>
+    <div class="text-center-bottom">
+      <h1>  <%= link_to businesses_home_path do %>
+        <%= Emoji.find_by_alias("european_post_office").raw %>
+        <% end %>
+
+
+      <%= link_to influencers_home_path do %>
+        <%= Emoji.find_by_alias("iphone").raw %>
+        <% end %>
+      </h1>
+    </div>
+  </div>
 </div>

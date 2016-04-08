@@ -90,3 +90,15 @@ influencer.basic_info(client)
   end
 
 end
+
+ # def import_followers
+ #    response = user.client.user_follows
+ #    followers = [].concat(response)
+ #    next_cursor = response.pagination[:next_cursor]
+ #    while !(next_cursor.to_s.empty?) do
+ #      response = Instagram.user_follows(uid, {:cursor => next_cursor})
+ #      next_cursor = response.pagination[:next_cursor]
+ #      followers.concat(response)
+ #    end
+ #    return followers
+ #  end
