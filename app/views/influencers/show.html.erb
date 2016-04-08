@@ -1,17 +1,40 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-
-   <p><%= @influencer.photo %></p>
-   <p><%= @influencer.username %></p>
-   <p><%= @influencer.first_name %></p>
-   <p><%= @influencer.last_name %></p>
-   <p><%= @influencer.followers %></p>
-   <p><%= @influencer.avg_photo_comments %></p>
-   <p><%= @influencer.avg_photo_likes %></p>
-   <p><%= @influencer.top_hashtags %></p>
-   <p><%= @influencer.top_places %></p>
-   <p><%= @influencer.address %></p>
-   <p><%= @influencer.number %></p>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 container-instagram">
+      <div class="insta-pic col-xs-7">
+      </div>
+      <div class="col-xs-4 insta-description">
+        <h1><%= @influencer.username %></h1>
+        <h4>First Name</h4>
+        <p><%= @influencer.first_name %> </p>
+        <h4>Last Name</h4>
+        <p><%= @influencer.last_name %></p>
+        <h4>Followers</h4>
+        <p><%= @influencer.followers %></p>
+        <h4>Likes/Photo Ratio</h4>
+        <p><%= @influencer.avg_photo_likes %></p>
+        <h4>Comments/Photo Ratio</h4>
+        <p><%= @influencer.avg_photo_comments %></p>
+        <h4>Address</h4>
+        <p><%= @influencer.address %></p>
+        <h4>Phone Number</h4>
+        <p><p><%= @influencer.number %></p></p>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

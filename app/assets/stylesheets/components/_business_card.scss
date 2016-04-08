@@ -1,21 +1,23 @@
-.business-card {
+.business-card-container {
   background: white;
   border: 1px solid $gray-light;
-  margin-top: 30px;
-  height: 400px;
-  border-radius: 4px;
+  margin: auto;
+  border-radius: 3px;
+  max-width: 500px;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .business-card-banner {
   background-size: cover;
-  background-position: center-top;
+  background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  height: 300px;
+  height: 600px;
   margin-bottom: 10px;
 }
 
-.business-card > p {
+.business-card-container > p {
   color: $brand-blue;
   padding-left: 10px;
   padding-top: 20px;
@@ -24,7 +26,8 @@
 
 
 .business-link {
-  color: #A3A1A3;
+  color: black;
+  height: 30px;
   padding-left: 10px;
   padding-bottom: 30px;
   opacity: 0.8;
@@ -32,7 +35,7 @@
 
 .business-link:hover {
   text-decoration: none;
-  color: #A3A1A3;
+  color: black;
   opacity: 1;
 }
 

@@ -1,28 +1,28 @@
-<h1><%= @business.name%></h1>
-<h4> #<%= (@business.category).split.join %> </h4>
-
-<div class="container container-show ">
+<div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-3">
-        <img src="http://www.brianhonigman.com/wp-content/uploads/2014/06/tumblr_mucr5ouPLQ1s8jl6ro1_400.gif" alt="" class="src" style="border-radius: 50%; width: 150px; padding: 20px; margin-left: 40px">
+    <div class="col-xs-12 container-instagram">
+      <div class="insta-pic col-xs-7">
       </div>
-      <div class="col-xs-12 col-sm-5">
-        <div class="container">
-            <h4>Contact</h4>
-            <p><%= @business.contact_name%> </p>
-            <h4>Address</h4>
-            <p><%= @business.address %></p>
-        </div>
+      <div class="col-xs-4 insta-description">
+        <h1><%=@business.name%></h1>
+        <h4>Contact</h4>
+        <p><%= @business.contact_name%> </p>
+        <h4>Address</h4>
+        <p><%= @business.address %></p>
+        <h4>Campaigns</h4>
+        <% (@business.campaigns).each do |campaign| %>
+        <p><% campaign.title %></p>
+        <% end %>
+        <h4>Instagrammers</h4>
+        <% (@business.campaigns).each do |campaign| %>
+        <%(campaign.applications).each do |application| %>
+        application.influencer.username
+        application.influencer.photo
+        <% end %>
+        <% end %>
+        <img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="src" style="border-radius: 50%; width: 150px; padding: 20px">
       </div>
+    </div>
   </div>
 </div>
-
-
-<h4>Campaigns</h4>
-<div class="banner index" style="background-image: url('http://s3.amazonaws.com/nikeinc/assets/22418/JDI_hd_1600.JPG?1377017837'); border-radius: 4px; margin-left: 10px; margin-right: 10px; margin-bottom: 40px; height: 60vh; background-position: center; background-size: cover"></div>
-
-<h4>Instagrammers</h4>
-<img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="src" style="border-radius: 50%; width: 150px; padding: 20px">
-
-
 
