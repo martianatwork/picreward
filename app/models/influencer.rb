@@ -5,7 +5,7 @@ class Influencer < ActiveRecord::Base
   has_many :places, dependent: :destroy
   has_many :pics, dependent: :destroy
 
-  mount_uploader :photo, PhotoUploader
+  # mount_uploader :photo, PhotoUploader
 
 
   # validates :username, presence: true, uniqueness: true
@@ -51,6 +51,11 @@ class Influencer < ActiveRecord::Base
     # influencer.top_places(user.token)
     # influencer.save!
   end
+
+
+
+
+
 
 
   def top_hashtags(media_item)
@@ -100,12 +105,30 @@ class Influencer < ActiveRecord::Base
   end
 
   def basic_info(client)
-    self.username = client.user.username
-    self.followers = client.user.counts.followed_by
-    self.save!
-  end
+    client.user.each do |info|
+      # byebug
+      if info[0] == "username"
+        self.username = info[1]
+      elsif info[0] == "counts"
+        self.followers = info[1].followed_by
+      elsif info[0] == "profile_picture"
+        self.photo = info[1]
+      elsif info[0] == "full_name"
+        name = info[1].split
+        self.first_name = name[0]
+        self.last_name = name[1]
+      end
+      self.save!
+    end
 
+  end
 end
+
+  # t.string   "first_name"
+  #   t.string   "last_name"
+  #  t.string   "photo"
+
+
 
  # def import_followers
  #    response = user.client.user_follows
