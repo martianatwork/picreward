@@ -1,15 +1,16 @@
 <div class="banner-home">
   <div class="left-side">
     <div class="hand-bckg">
-      <%= image_tag 'PicHandMuffin.png' %>
-      <%= image_tag 'PicHandWaffle.png' %>
-      <%= image_tag 'PicHandShoes.png'  %>
+      <%= image_tag 'pichandmuffin.png' %>
+      <%= image_tag 'pichandwaffle.png' %>
+      <%= image_tag 'pichandshoes.png'  %>
     </div>
     <div class="bckg">
-      <%= image_tag 'Muffin.jpg'        %>
-      <%= image_tag 'Waffle.jpg'        %>
-      <%= image_tag 'Shoes.jpg'         %>
+      <%= image_tag 'muffin.png'        %>
+      <%= image_tag 'waffle.png'        %>
+      <%= image_tag 'shoes.png'         %>
     </div>
+
     <div class="left-text">
       <h1>Rethink</h1>
     </div>
@@ -19,14 +20,14 @@
       <h1> Instagram posting </h1>
     </div>
     <div class="text-center-bottom">
-      <h1>
-        <%= link_to businesses_home_path do %>
-          <%= Emoji.find_by_alias("heart").raw %>
-        <% end %>
-        <%= link_to influencers_home_path do %>
-          <%= Emoji.find_by_alias("iphone").raw %>
-        <% end %>
-      </h1>
-    </div>
+
+      <%= link_to businesses_home_path do %>
+      <h1><%= Emoji.find_by_alias("point_right").raw %>  Business?</h1>
+      <% end %>
+      <%= link_to influencers_home_path do %>
+      <h1><%= Emoji.find_by_alias("point_right").raw %>  Influencer?</h1>
+      <% end %>
+    </h1>
   </div>
+</div>
 </div>
