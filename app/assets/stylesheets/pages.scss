@@ -19,16 +19,25 @@ position:relative;
 
 }
 
+// .fixed-img img{
+//   position:absolute;
+//   right:0;
+//   bottom: 0;
+//   height:80%;
+//   z-index: 2;
+
+// }
+
 
 .hand-bckg img {
   position:absolute;
   right:0;
   bottom: 0;
   height:80%;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
   z-index: 1;
 }
 
@@ -48,6 +57,8 @@ position:relative;
   position:absolute;
   right:0;
   height:100%;
+  // filter: blur(4px);
+  // overflow: hidden;
   -webkit-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
@@ -60,13 +71,13 @@ position:relative;
   0% {
     opacity:1;
   }
-  25% {
+  24% {
     opacity:1;
   }
   33% {
     opacity:0;
   }
-  92% {
+  90% {
     opacity:0;
   }
   100% {
@@ -77,11 +88,11 @@ position:relative;
 .hand-bckg img:nth-of-type(1),
 .bckg img:nth-of-type(1)
  {
-  animation-delay: 8s;
+  animation-delay:14s;
 }
 .hand-bckg img:nth-of-type(2),
 .bckg img:nth-of-type(2) {
-  animation-delay: 4s;
+  animation-delay: 7s;
 }
 .hand-bckg img:nth-of-type(3),
 .bckg img:nth-of-type(3) {
@@ -94,20 +105,11 @@ position:relative;
 animation-name: FadeInOut;
 animation-timing-function: ease-in-out;
 animation-iteration-count: infinite;
-animation-duration: 12s;
+animation-duration: 21s;
 // animation-direction: alternate;
 }
 
-.text-center-bottom h1 {
-  font-size: 60px;
-}
 
-
-.text-center-bottom h1:hover{
-  text-decoration: none;
-  font-size:70px;
-  transition:1s;
-}
 
 .left-text {
 position: absolute;
@@ -143,9 +145,20 @@ color: $gray-medium;
 
 .text-center-bottom {
 position: absolute;
-bottom: 250px;
-left: 250px;
+bottom: 100px;
+left: 150px;
 
-text-align: center;
+// text-align: center;
 }
 
+
+.text-center-bottom h1 {
+  font-size: 30px;
+}
+
+
+.text-center-bottom h1:hover{
+  text-decoration: none;
+  font-size:45px;
+  transition:1s;
+}
