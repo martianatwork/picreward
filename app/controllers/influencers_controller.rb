@@ -1,5 +1,4 @@
 class InfluencersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_influencer, only: [:show, :edit, :destroy, :update]
 
   def index
