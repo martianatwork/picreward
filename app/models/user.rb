@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:instagram]
 
-  def influencer?
-    provider == 'instagram'
-  end
+  # def influencer?
+  #   provider == 'instagram'
+  # end
 #pk pas en dessous de init influencer
 
 def initialize_influencer
