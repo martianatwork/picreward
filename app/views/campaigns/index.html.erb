@@ -1,88 +1,90 @@
-<div class="row">
+<div class="container">
+  <div class="row">
 
-  <div class="tabs">
-    <a class="tab active" data-target="#local_swaps_wrapper">
-      <h3><i class="fa fa-compass"></i>  Local Swaps</h3>
-    </a>
-    <a class="tab" data-target="#paid_jobs_wrapper">
-      <h3><i class="fa fa-money"></i>  Paid Jobs</h3>
-    </a>
-  </div>
-
-  <div id="local_swaps_wrapper" class="tab-content">
-    <div id="local_swaps_view">
-      <div class="fluid-container">
-
-        <div class="row nomargin">
-          <div class="col-xs-12 col-md-7 leftcol">
-
-            <div class="row">
-
-              <div class="local_swaps">
-                <% @local_swaps.each do |campaign| %>
-                <div class="col-xs-12 col-sm-5 col-md-4">
-                  <div class="campaign-card">
-                    <p><%= campaign.title%></p>
-                    <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/300/?random');"></div>
-                    <p> #<%= (campaign.product).split.join %> </p>
-                    <hr class="line">
-                    <%= link_to campaign_path(campaign), class: "campaign-link" do %>
-                    @Check Da Campaign
-                    <% end %>
-
-                  </div>
-                </div>
-                <% end %>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="col-xs-12 col-md-5 rightcol">
-
-            <div id="map"></div>
-
-          </div>
-        </div>
-
-      </div>
+    <div class="tabs">
+      <a class="tab active" data-target="#local_swaps_wrapper">
+        <h3><i class="fa fa-compass"></i>  Local Swaps</h3>
+      </a>
+      <a class="tab" data-target="#paid_jobs_wrapper">
+        <h3><i class="fa fa-money"></i>  Paid Jobs</h3>
+      </a>
     </div>
-  </div>
 
-  <div id="paid_jobs_wrapper" class="tab-content hidden">
-    <div id="paid_jobs_view">
-      <div class="fluid-container">
+    <div id="local_swaps_wrapper" class="tab-content">
+      <div id="local_swaps_view">
+        <div class="fluid-container">
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-
-            <div class="paid_jobs">
+          <div class="row nomargin">
+            <div class="col-xs-12 col-md-7 leftcol">
 
               <div class="row">
-                <% @paid_jobs.each do |campaign| %>
-                <div class="col-xs-12 col-sm-5 col-md-4">
-                  <div class="campaign-card">
-                    <p><%= campaign.title%></p>
-                    <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/200/?random');"></div>
-                    <p> #<%= (campaign.product).split.join %> </p>
-                    <hr class="line">
-                    <%= link_to campaign_path(campaign), class: "campaign-link" do %>
-                    @Check Da Campaign
-                    <% end %>
 
+                <div class="local_swaps">
+                  <% @local_swaps.each do |campaign| %>
+                  <div class="col-xs-12 col-sm-5 col-md-4">
+                    <div class="campaign-card">
+                      <p><%= campaign.title%></p>
+                      <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/300/?random');"></div>
+                      <p> #<%= (campaign.product).split.join %> </p>
+                      <hr class="line">
+                      <%= link_to campaign_path(campaign), class: "campaign-link" do %>
+                      @Check Da Campaign
+                      <% end %>
+
+                    </div>
                   </div>
+                  <% end %>
                 </div>
-                <% end %>
+
               </div>
 
             </div>
+            <div class="col-xs-12 col-md-5 rightcol">
 
+              <div id="map"></div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="paid_jobs_wrapper" class="tab-content hidden">
+      <div id="paid_jobs_view">
+        <div class="fluid-container">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+              <div class="paid_jobs">
+
+                <div class="row">
+                  <% @paid_jobs.each do |campaign| %>
+                  <div class="col-xs-12 col-sm-5 col-md-4">
+                    <div class="campaign-card">
+                      <p><%= campaign.title%></p>
+                      <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/200/?random');"></div>
+                      <p> #<%= (campaign.product).split.join %> </p>
+                      <hr class="line">
+                      <%= link_to campaign_path(campaign), class: "campaign-link" do %>
+                      @Check Da Campaign
+                      <% end %>
+
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
 <% content_for(:after_js) do %>
