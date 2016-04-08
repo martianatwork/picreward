@@ -64,7 +64,7 @@
                   <div class="col-xs-12 col-sm-5 col-md-4">
                     <div class="campaign-card">
                       <p><%= campaign.title%></p>
-                      <div class="campaign-card-banner" style="background-image: url('http://www.unsplash.it/200/?random');"></div>
+                      <div class="campaign-card-banner" style="background-image: url(<%= cl_image_path campaign.photo %>);"></div>
                       <p> #<%= (campaign.product).split.join %> </p>
                       <hr class="line">
                       <%= link_to campaign_path(campaign), class: "campaign-link" do %>
