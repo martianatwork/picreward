@@ -1,9 +1,45 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
 
-      <h1>Influencers</h1>
+<div class="wrapper-influencer-home">
+  <p class="text-center title-swipebox">Your account matters</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 container-instagram">
+        <div class="insta-pic col-xs-7">
 
+        </div>
+        <div class="col-xs-4 insta-description">
+          <h2 class="text-center">Use the power of your influence</h2>
+          <hr class="hr-influencer-home">
+          <h4>1. Find a Campaign and embrace your new job</h4>
+          <h4>2. Apply to the Campaign</h4>
+          <h4>3. Share your pic</h4>
+          <p class="influencer-home-emojis"> PicReward
+          <%= Emoji.find_by_alias("clap").raw %>
+          <%= Emoji.find_by_alias("rocket").raw %>
+          <%= Emoji.find_by_alias("eyes").raw %>
+          <%= Emoji.find_by_alias("moneybag").raw %>
+          </p>
+          <%= link_to "See Campaigns", campaigns_path, class: "button-influencer-home brand-button" %>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,12 +3,12 @@
     <div class="hand-bckg">
       <%= image_tag 'PicHandMuffin.png' %>
       <%= image_tag 'PicHandWaffle.png' %>
-      <%= image_tag 'PicHandShoes.png' %>
+      <%= image_tag 'PicHandShoes.png'  %>
     </div>
     <div class="bckg">
-      <%= image_tag 'Muffin.jpg' %>
-      <%= image_tag 'Waffle.jpg' %>
-      <%= image_tag 'Shoes.jpg' %>
+      <%= image_tag 'Muffin.jpg'        %>
+      <%= image_tag 'Waffle.jpg'        %>
+      <%= image_tag 'Shoes.jpg'         %>
     </div>
     <div class="left-text">
       <h1>Rethink</h1>
@@ -19,13 +19,12 @@
       <h1> Instagram posting </h1>
     </div>
     <div class="text-center-bottom">
-      <h1>  <%= link_to businesses_home_path do %>
-        <%= Emoji.find_by_alias("european_post_office").raw %>
+      <h1>
+        <%= link_to businesses_home_path do %>
+          <%= Emoji.find_by_alias("heart").raw %>
         <% end %>
-
-
-      <%= link_to influencers_home_path do %>
-        <%= Emoji.find_by_alias("iphone").raw %>
+        <%= link_to influencers_home_path do %>
+          <%= Emoji.find_by_alias("iphone").raw %>
         <% end %>
       </h1>
     </div>

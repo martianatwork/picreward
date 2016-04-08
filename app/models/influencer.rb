@@ -3,10 +3,12 @@ class Influencer < ActiveRecord::Base
   has_many :applications, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :places, dependent: :destroy
+  has_many :pics, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
-  validates :username, presence: true, uniqueness: true
+
+  # validates :username, presence: true, uniqueness: true
   # validates :address, presence: true
   # validates :number, presence: true
   # validates :first_name, presence: true
@@ -27,25 +29,27 @@ class Influencer < ActiveRecord::Base
    likes_count = 0
    influencer = self.create(
     user: user)
-# client = Instagram.client(:access_token => "242894001.749d805.0696daa690cc44fabb22accca07be530")
-client = Instagram.client(:access_token => user.token)
-client.user_recent_media.each do |media_item|
- likes_count += media_item.likes[:count]
- comments_count += media_item.comments[:count]
- influencer.top_hashtags(media_item)
- influencer.top_places(media_item)
-end
-comments_count /= 20
-likes_count /= 20
+   influencer.save!
+   # byebug
+    # client = Instagram.client(:access_token => "242894001.749d805.0696daa690cc44fabb22accca07be530")
+    client = Instagram.client(:access_token => user.token)
+    client.user_recent_media.each do |media_item|
+     likes_count += media_item.likes[:count]
+     comments_count += media_item.comments[:count]
+     influencer.top_hashtags(media_item)
+     influencer.top_places(media_item)
+     influencer.top_pics(media_item)
+   end
+   comments_count /= 20
+   likes_count /= 20
 
+   influencer.avg_photo_comments = comments_count
+   influencer.avg_photo_likes = likes_count
 
-influencer.avg_photo_comments = comments_count
-influencer.avg_photo_likes = likes_count
-
-influencer.basic_info(client)
+   influencer.basic_info(client)
     # influencer.top_hashtags(user.token)
     # influencer.top_places(user.token)
-    influencer.save!
+    # influencer.save!
   end
 
 
@@ -65,6 +69,18 @@ influencer.basic_info(client)
         frequency: v)
     end
   end
+
+  def top_pics(media_item)
+    pics_hash = {}
+    pics_hash[media_item.likes[:count]] = media_item.images.standard_resolution[:url]
+    pics_hash.each do |k,v|
+      Pic.create(
+        influencer: self,
+        likes: k.to_i,
+        pic_url: v)
+    end
+  end
+
 
   def top_places(media_item)
     places_hash = {}
