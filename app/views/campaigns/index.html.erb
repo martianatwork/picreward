@@ -21,7 +21,7 @@
 
                 <div class="local_swaps">
                   <% @local_swaps.each do |campaign| %>
-                  <div class="col-xs-12 col-sm-5 col-md-4">
+                  <div class="col-xs-8 col-xs-offset-2">
                     <div class="campaign-card">
                       <p><%= campaign.title%></p>
                       <div class="campaign-card-banner" style="background-image: url(<%= cl_image_path campaign.photo %>);"></div>
@@ -61,7 +61,7 @@
 
                 <div class="row">
                   <% @paid_jobs.each do |campaign| %>
-                  <div class="col-xs-12 col-sm-5 col-md-4">
+                  <div class="col-xs-8 col-xs-offset-2">
                     <div class="campaign-card">
                       <p><%= campaign.title%></p>
                       <div class="campaign-card-banner" style="background-image: url(<%= cl_image_path campaign.photo %>);"></div>
