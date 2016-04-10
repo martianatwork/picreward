@@ -3,6 +3,7 @@ def instagram
     user = User.find_for_oauth(request.env['omniauth.auth'])
 
     if user.persisted?
+      # user.influencer.create_for(user)
       sign_in_and_redirect user, event: :authentication
       set_flash_message(:notice, :success, kind: 'Instagram') if is_navigational_format?
     else

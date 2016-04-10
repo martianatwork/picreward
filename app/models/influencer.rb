@@ -55,7 +55,7 @@ class Influencer < ActiveRecord::Base
 
 
 
-
+#how to update info when a user is signed in
 
 
   def top_hashtags(media_item)
