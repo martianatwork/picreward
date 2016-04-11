@@ -29,6 +29,21 @@
   </div>
   <div class="row">
 
+    <% if user_signed_in? && @campaign.business.user == current_user %>
+      <div class="col-sm-8 col-sm-offset-2 form-container">
+        <h1 class="text-center">Applications</h1>
+        <% (@campaign.applications).each do |application| %>
+          <ul>
+            <li class="campaign-show-applications">
+            <h4>
+            <%= link_to (Emoji.find_by_alias("clipboard").raw) + " " +application.influencer.username, campaign_application_path(@campaign, application) %>
+            </h4>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    <% end %>
+
     <% if user_signed_in? && current_user.influencer %>
 
     <div class="col-sm-8 col-sm-offset-2 form-container">
