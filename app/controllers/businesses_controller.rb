@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  before_action :find_business, only: [:show, :edit, :update, :destroy]
+  before_action :find_business, only: [:show, :edit, :update, :destroy, :profile]
 
   def index
     @businesses = policy_scope(Business)
@@ -42,6 +42,10 @@ class BusinessesController < ApplicationController
     authorize @business
     flash[:notice] = "Bye #{@business.name}, All the best!"
     redirect_to root_path
+  end
+
+  def profile
+    authorize @business
   end
 
 

@@ -20,4 +20,9 @@ class BusinessPolicy < BasePolicy
   def destroy?
     record.user == user
   end
+
+  def profile?
+    true
+  end
+
 end
