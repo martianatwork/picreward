@@ -40,12 +40,15 @@
 // Show
 
 .campaign-box {
-  position: relative;
   background: white;
   border: 1px solid $gray-light;
   margin-top: 20px;
   padding: 40px;
   border-radius: 4px;
+}
+
+.campaign-details {
+  padding: 20px 0;
 }
 
 .campaign-box-photo {
@@ -56,18 +59,26 @@
   list-style: none;
 }
 
-.campaign-actions-container {
-  position: absolute;
-  top: 0px;
-  right: -210px;
-  border-radius: 4px;
-  border: 1px solid $gray-light;
-  background-color: white;
-  padding: 10px;
+.campaign-actions {
+  padding-bottom: 10px;
+  background: $flashy-blue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .action-button {
+    margin-left: 10px;
+    padding: 0 20px;
+    border-radius: 2em;
+    line-height: 40px;
+    color: white;
+    font-size: 14px;
+    border: 0.6px solid white;
+  }
+  .action-button:hover {
+    color: white;
+    transition: 0.7s;
+  }
 }
 
-.campaign-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
