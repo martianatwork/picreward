@@ -11,7 +11,7 @@
         <p><%= @business.address %></p>
         <h4>Campaigns</h4>
         <% (@business.campaigns).each do |campaign| %>
-        <p><% campaign.title %></p>
+        <p><%= link_to campaign.title, campaign_path(campaign) %></p>
         <% end %>
         <h4>Instagrammers</h4>
         <% (@business.campaigns).each do |campaign| %>
