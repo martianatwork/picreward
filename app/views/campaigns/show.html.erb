@@ -4,6 +4,17 @@
 
       <div class="campaign-box">
 
+        <div class="campaign-actions-container">
+          <div class="campaign-actions">
+            <% if policy(@campaign).update? %>
+            <%= link_to 'Edit', edit_campaign_path(@campaign), class:"btn brand-button" %>
+            <% end %>
+            <% if policy(@campaign).destroy? %>
+            <%= link_to 'Destroy', @campaign, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn brand-button" %>
+            <% end %>
+          </div>
+        </div>
+
         <% if @campaign.reward_type == "Local Swap" %>
         <div id="small-map"></div>
         <% end %>

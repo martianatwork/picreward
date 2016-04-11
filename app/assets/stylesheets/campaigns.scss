@@ -40,6 +40,7 @@
 // Show
 
 .campaign-box {
+  position: relative;
   background: white;
   border: 1px solid $gray-light;
   margin-top: 20px;
@@ -53,4 +54,20 @@
 
 .campaign-show-applications {
   list-style: none;
+}
+
+.campaign-actions-container {
+  position: absolute;
+  top: 0px;
+  right: -210px;
+  border-radius: 4px;
+  border: 1px solid $gray-light;
+  background-color: white;
+  padding: 10px;
+}
+
+.campaign-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
