@@ -40,7 +40,9 @@ class CampaignsController < ApplicationController
   end
 
   def create
+    @business = Business.find_by_user_id(current_user)
     @campaign = Campaign.new(campaign_params)
+    @campaign.business = @business
     authorize @campaign
     if @campaign.save
       flash[:notice] = "Successfully created #{@campaign.title}"
