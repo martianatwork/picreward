@@ -19,7 +19,7 @@ class InfluencersController < ApplicationController
     authorize @influencer
     if @influencer.save
       flash[:notice] = "Successfully created #{@influencer.username}"
-      redirect_to influencer_path(@influencer)
+      redirect_to campaigns_path
     else
       flash[:alert] = "Failed to create #{@influencer.username}"
       render :new
@@ -40,7 +40,7 @@ class InfluencersController < ApplicationController
   def update
     @influencer.update(influencer_params)
     authorize @influencer
-    redirect_to influencer_path(@influencer)
+    redirect_to campaigns_path
   end
 
   private
