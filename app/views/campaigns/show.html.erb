@@ -5,7 +5,7 @@
       <div class="campaign-box">
 
         <% if @campaign.reward_type == "Local Swap" %>
-          <div id="small-map"></div>
+        <div id="small-map"></div>
         <% end %>
 
         <h3><%= @campaign.title %></h3>
@@ -20,7 +20,7 @@
         <p><strong>Number of pics to post</strong> <%= @campaign.pics_to_post %></p>
 
         <div class="campaign-box-photo">
-        <%= cl_image_tag @campaign.photo, class:"img-responsive" %>
+          <%= cl_image_tag @campaign.photo, class:"img-responsive" %>
         </div>
 
       </div>
@@ -29,22 +29,24 @@
   </div>
   <div class="row">
 
-    <% if user_signed_in? && @campaign.business.user == current_user %>
-      <div class="col-sm-8 col-sm-offset-2 form-container">
-        <h1 class="text-center">Applications</h1>
-        <% (@campaign.applications).each do |application| %>
-          <ul>
-            <li class="campaign-show-applications">
-            <h4>
+    <% if user_signed_in? && @campaign.business %>
+    <% if @campaign.business.user == current_user %>
+    <div class="col-sm-8 col-sm-offset-2 form-container">
+      <h1 class="text-center">Applications</h1>
+      <% (@campaign.applications).each do |application| %>
+      <ul>
+        <li class="campaign-show-applications">
+          <h4>
             <%= link_to (Emoji.find_by_alias("clipboard").raw) + " " +application.influencer.username, campaign_application_path(@campaign, application) %>
-            </h4>
-            </li>
-          </ul>
-        <% end %>
-      </div>
+          </h4>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <% end %>
     <% end %>
 
-    <% if user_signed_in? && current_user.influencer %>
+    <% if user_signed_in? && current_user.influencer && @campaign.reward_type == "Paid Job"%>
 
     <div class="col-sm-8 col-sm-offset-2 form-container">
       <h3>Apply</h3>

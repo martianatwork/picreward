@@ -2,8 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 container-instagram">
-        <div class="insta-pic col-xs-7">
-        </div>
+        <div class="insta-pic col-xs-7", style="background-image: url(<%= cl_image_path @influencer.photo %>);"></div>
         <div class="col-xs-4 insta-description">
           <h1><%= @influencer.username %></h1>
           <h4>First Name</h4>
