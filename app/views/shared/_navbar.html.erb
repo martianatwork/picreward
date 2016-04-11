@@ -86,7 +86,7 @@
     <% if user_signed_in? && current_user.influencer %>
       <%= link_to t(".top_call_to_action", default: "See Jobs"), campaigns_path, class: "navbar-wagon-item brand-button btn" %>
     <% elsif user_signed_in? && current_user.business.present? %>
-      <%= link_to t(".top_call_to_action", default: "Create Campaign"), new_campaign_path, class: "navbar-wagon-item brand-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Dashboard"), business_path(current_user), class: "navbar-wagon-item brand-button btn" %>
     <% end %>
   </div>
 
