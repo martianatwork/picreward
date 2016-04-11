@@ -54,51 +54,29 @@
 .brand-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 2em;
+  border-radius: 1em;
   line-height: 40px;
   // background-color: #133959;
   color: #133959;
   font-size: 14px;
   border: 0.6px solid #133959;
+  // background: linear-gradient(45deg, white 50%, white 50%);
+  // background-size: 220% 100%;
+  background-position:right bottom;
+
 }
 
-// @keyframes refill {
-//   0% {
-// background: linear-gradient(to right, green 50%, blue 50%);
-// background-size: 200% 100%;
-// background-position:left bottom;
-//   }
-//   50% {
-//     background-color:rgba(255,0,0,0.2);
-//   }
-//   100% {
-//     background-color:yellow;
-//   }
-// }
 
 .brand-button:hover {
-  animation-name: refill;
-  animation-duration: 1s;
-  animation-iteration-count: 4;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+    background: linear-gradient(45deg, $flashy-blue 50%, white 50%);
+    background-size: 240% 100%;
+    background-position:left bottom;
+    transition: all 1s ease;
+    color: white;
+    border: 0.6px solid $flashy-blue;
+
+
 }
-
-
-
-
-// .brand-button:hover {
-//   color: white;
-//   background: #1D8FF1;
-//   border-color: #1D8FF1;
-//   transition: 0.7s;
-// }
-
-
-
-
-
-
 
 
 
