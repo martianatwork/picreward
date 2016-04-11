@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'businesses_home', to: 'pages#businesses_home', as: :businesses_home
 
+  get 'businesses/:id/profile', to: 'businesses#profile', as: :business_profile
+
   resources :businesses
 
   resources :campaigns do
