@@ -154,11 +154,14 @@ left: 150px;
 
 .text-center-bottom h1 {
   font-size: 30px;
+  color:$gray-medium;
 }
 
 
 .text-center-bottom h1:hover{
   text-decoration: none;
-  font-size:45px;
+  color:$flashy-blue;
+
+  // font-size:45px;
   transition:1s;
 }

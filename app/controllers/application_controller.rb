@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if(resource.influencer?)
-      influencer_path(resource.influencer)
+      campaigns_path
     else
       if(resource.business)
         business_path(resource.business)
