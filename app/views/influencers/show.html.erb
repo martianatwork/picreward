@@ -2,7 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 container-instagram">
-        <div class="insta-pic col-xs-7">
+        <div class="insta-pic-influencer col-xs-7">
+        <h1>Top Photos</h1>
+          <% (Pic.order(likes: :desc).where("influencer_id = ?", @influencer.id).limit(3)).each do |pic|%>
+            <%= image_tag pic.pic_url, class: "app-top-pic-influencer" %>
+            <%=pic.likes%> likes
+          <% end %>
         </div>
         <div class="col-xs-4 insta-description">
           <h1><%= @influencer.username %></h1>
@@ -16,10 +21,9 @@
           <p><%= @influencer.avg_photo_likes %></p>
           <h4>Comments/Photo Ratio</h4>
           <p><%= @influencer.avg_photo_comments %></p>
-          <h4>Address</h4>
-          <p><%= @influencer.address %></p>
-          <h4>Phone Number</h4>
-          <p><p><%= @influencer.number %></p></p>
+
+
+
         </div>
       </div>
     </div>
