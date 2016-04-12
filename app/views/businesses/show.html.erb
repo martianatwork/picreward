@@ -9,34 +9,30 @@
 <h1 class="text-center" style="color: #C95855;"><%=@business.name%></h1>
 
 <% (@business.campaigns).each do |campaign| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 container-instagram">
-        <div class="insta-pic-business-show col-xs-4" style="background-image: url('<%= campaign.photo %>');">
-        </div>
-        <div class="col-xs-7 insta-description" style="padding-left: 20px;" >
-          <h2 style="margin-bottom: 30px;">
-          <%= link_to campaign.title, campaign_path(campaign) %>
-          </h2>
-
-          <h4><%=campaign.product%></h4>
-          <p>Description: <%= campaign.description %></p>
-          <p>Instructions: <%=campaign.instructions%></p>
-          <p>Budget: <%=campaign.budget%></p>
-          <p>Start: <%=campaign.start_time%></p>
-          <p>End: <%=campaign.end_time%></p>
-          <p>Pics demanded: <%=campaign.pics_to_upload%></p>
-          <p>Pics to post: <%=campaign.pics_to_post%></p>
-
-          <h4 style="margin-top: 20px">Instagrammers</h4>
-            <%(campaign.applications).each do |application| %>
-              <%= link_to image_tag(application.influencer.photo, class:"avatar-large"), influencer_path(application.influencer) %> <br>
-              <%= application.influencer.username%>
-          <% end %>
-        </div>
-
-      </div>
+  <div class="container-instagram">
+    <div class="insta-pic-business-show" style="background-image: url('<%= campaign.photo %>');">
     </div>
+    <div class="insta-description" style="padding-left: 20px;" >
+      <h2 style="margin-bottom: 30px;">
+      <%= link_to campaign.title, campaign_path(campaign) %>
+      </h2>
+
+      <h4><%=campaign.product%></h4>
+      <p>Description: <%= campaign.description %></p>
+      <p>Instructions: <%=campaign.instructions%></p>
+      <p>Budget: <%=campaign.budget%></p>
+      <p>Start: <%=campaign.start_time%></p>
+      <p>End: <%=campaign.end_time%></p>
+      <p>Pics demanded: <%=campaign.pics_to_upload%></p>
+      <p>Pics to post: <%=campaign.pics_to_post%></p>
+
+      <h4 style="margin-top: 20px">Instagrammers</h4>
+        <%(campaign.applications).each do |application| %>
+          <%= link_to image_tag(application.influencer.photo, { "data-id": application.influencer.id, class:"avatar-large show-influencer" }), "#" %> <br>
+          <%= application.influencer.username%>
+      <% end %>
+    </div>
+
   </div>
 <% end %>
 

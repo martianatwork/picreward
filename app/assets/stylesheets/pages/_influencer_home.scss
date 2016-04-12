@@ -62,3 +62,23 @@
   padding-bottom: 50px;
 }
 
+.card-carroussel {
+  display: flex;
+  min-height: 50vh;
+
+}
+
+
+.card-pic {
+  flex: 1;
+  position: relative;
+  min-height: 50vh;
+}
+
+.card-background {
+  position: absolute;
+  background-size: cover !important;
+  // height: 100%;
+  // width: 100%;
+  // background-position: center center !important;
+}

@@ -60,9 +60,11 @@
   color: #133959;
   font-size: 14px;
   border: 0.6px solid #133959;
-  // background: linear-gradient(45deg, white 50%, white 50%);
-  // background-size: 220% 100%;
+  background: linear-gradient(45deg, $flashy-blue 50%,  white 50%);
+  background-size: 240% 100%;
   background-position:right bottom;
+  transition: all 0.3s ease;
+
 
 }
 
@@ -71,7 +73,7 @@
     background: linear-gradient(45deg, $flashy-blue 50%, white 50%);
     background-size: 240% 100%;
     background-position:left bottom;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
     color: white;
     border: 0.6px solid $flashy-blue;
 

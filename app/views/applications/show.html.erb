@@ -59,7 +59,9 @@
 
           <p>
           <div class="flexbox-app-show">
-          <a>Most Used Tag:</a> <a>#<%= Tag.find(@application.influencer_id).name %></a>
+          <a>Most Used Tag:</a> <a><% Tag.where("influencer_id = ?", @application.influencer_id).each do |tag| %></a>
+          #<%= tag.name %>
+          <% end %>
           </div>
           </p><br>
 
