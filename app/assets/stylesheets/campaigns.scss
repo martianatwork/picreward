@@ -47,12 +47,38 @@
   border-radius: 4px;
 }
 
+.campaign-details {
+  padding: 20px 0;
+}
+
 .campaign-box-photo {
   margin-top: 20px;
 }
 
 .campaign-show-applications {
   list-style: none;
+}
+
+.campaign-actions {
+  padding-bottom: 10px;
+  background: $flashy-blue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .action-button {
+    margin-left: 10px;
+    padding: 0 20px;
+    border-radius: 2em;
+    line-height: 40px;
+    color: white;
+    font-size: 14px;
+    border: 0.6px solid white;
+  }
+  .action-button:hover {
+    color: white;
+    transition: 0.7s;
+  }
 }
 
 

@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $('.show-influencer').on('click', function(elem){
+  $('.insta-applier-item').on('click', function(elem){
     console.log(elem);
     var infl_id = $(elem.target).data("id");
     vex.defaultOptions.className = 'vex-theme-default';
@@ -12,7 +12,7 @@ $(document).ready(function() {
      type:'GET',
      success: function(data){
       // console.log(data);
-        response = $($.parseHTML(data)).filter(".business-card-container");
+        response = $($.parseHTML(data)).filter(".insta-business-card-container");
         vex.open({
           content: response,
           contentCSS: {
