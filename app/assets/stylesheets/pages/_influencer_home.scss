@@ -18,7 +18,12 @@
 .wrapper-influencer-home h2 {
   color: #C22F2F;
   margin-bottom: 30px;
-  font-family: $base-font
+  font-family: $base-font;
+  font-size: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4px;
 }
 .wrapper-influencer-home h4 {
   color: black;
@@ -41,24 +46,29 @@
 }
 
 .button-influencer-home {
-  margin-left: 100px;
   padding: 10px;
 }
 
 .insta-pic-influencer-home {
   background: url('https://community.semrush.com/uploads/media/a5/ea/a5ea1cdd39a658ae01cc458f3bff4962.png');
-  height: 100%;
   background-size: cover;
-  background-position: center-top;
-  height: 80vh;
+  background-position: center center;
+  flex: 1;
   background-repeat: no-repeat;
 }
 
 .container-instagram-influencer-home {
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding-bottom: 50px;
 }
+
+.influencer-home-button-container {
+  margin: auto;
+  padding-bottom: 10px
+}
+
+
 

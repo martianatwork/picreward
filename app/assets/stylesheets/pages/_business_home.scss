@@ -47,18 +47,19 @@
 
 .insta-pic-business-home {
   background: url('http://www.senseimarketing.com/wp-content/uploads/2015/08/Instagram-Advertising.png');
-  height: 100%;
+  min-height: 100%;
   background-size: cover;
-  background-position: center-top;
-  height: 80vh;
+  background-position: center center;
+  min-height: 80vh;
   background-repeat: no-repeat;
+  flex: 1;
 }
 
 .container-instagram-influencer-home {
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding-bottom: 50px;
 }
 

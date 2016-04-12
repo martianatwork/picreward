@@ -16,6 +16,8 @@
 
     <%= yield %>
 
+    <%= render 'shared/footer' unless @disable_footer %>
+
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
   </body>
