@@ -1,75 +1,53 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
 
-      <div class="campaign-actions form-container">
-        <h3><%= @campaign.title %></h3>
-        <div>
+<div class="insta-influencer-card-container">
+      <div class="insta-pic-business-show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= @campaign.photo %>');">
+        <div class='insta-budget-container'>
+          <div class='insta-budget'>
+            <%= @campaign.budget %>€
+          </div>
+        </div>
+        <div class='insta-product'><%=@campaign.product%></div>
+      </div>
+      <div class="business-insta-description">
+        <div class="insta-title-container">
+          <div class='insta-title'>
+            <%= @campaign.title %>
+          </div>
+           <div>
           <% if policy(@campaign).update? %>
           <%= link_to 'Edit', edit_campaign_path(@campaign), class:"btn action-button" %>
           <% end %>
+          </div>
+        </div>
+
+        <div class='insta-instruction'>
+          <%=@campaign.instructions%>
+        </div>
+        <div class='insta-timeline'>
+          <div class='insta-timeline-start'>
+            <i class="fa fa-flag-o insta-flag" aria-hidden="true"></i> <%= @campaign.start_time %>
+          </div>
+          <div class="insta-timeline-line">
+            <hr class="insta-timeline-color">
+          </div>
+          <div class='insta-timeline-end'>
+            <i class="fa fa-flag-checkered insta-flag" aria-hidden="true"></i><%= @campaign.end_time %>
+          </div>
+        </div>
+        <div class="insta-obligations">
+          Vous allez devoir envoyer <strong><%=@campaign.pics_to_upload%></strong> photos, nous en selectionnerons <strong><%=@campaign.pics_to_post%></strong> à poster
+        </div>
+
+        <div class='insta-appliers-title'></div>
+        <div class='insta-appliers'>
+          <% if @campaign.reward_type == "Local Swap" %>
+            <div id="small-map"></div>
+          <% end %>
         </div>
       </div>
-
-      <div class="campaign-box form-container">
-
-        <% if @campaign.reward_type == "Local Swap" %>
-        <div id="small-map"></div>
-        <% end %>
-
-        <div class="campaign-details">
-        <p><strong>Product</strong> <%= @campaign.product %></p>
-        <p><strong>Description</strong> <%= @campaign.description %></p>
-        <p><strong>Instructions</strong> <%= @campaign.instructions %></p>
-        <p><strong>Goal</strong> <%= @campaign.goal %></p>
-        <p><strong>Budget</strong> <%= @campaign.budget %></p>
-        <p><strong>Start</strong> <%= @campaign.start_time %></p>
-        <p><strong>End</strong> <%= @campaign.end_time %></p>
-        <p><strong>Number of pics to upload</strong> <%= @campaign.pics_to_upload %></p>
-        <p><strong>Number of pics to post</strong> <%= @campaign.pics_to_post %></p>
-        </div>
-
-        <div class="campaign-box-photo">
-          <%= cl_image_tag @campaign.photo, class:"img-responsive" %>
-        </div>
-
-      </div>
-
-    </div>
   </div>
-  <div class="row">
-    <% if user_signed_in? && @campaign.business %>
-    <% if @campaign.business.user == current_user %>
 
-  <%# if @campaign.business %>
-    <%# if user_signed_in? && @campaign.business.user == current_user %>
 
-    <div class="col-sm-8 col-sm-offset-2 form-container">
-      <h1 class="text-center">Applications</h1>
-      <% (@campaign.applications).each do |application| %>
-      <ul>
-        <li class="campaign-show-applications">
-          <h4>
-            <%= link_to (Emoji.find_by_alias("clipboard").raw) + " " +application.influencer.username, campaign_application_path(@campaign, application) %>
-          </h4>
-        </li>
-      </ul>
-      <% end %>
-    </div>
-    <% end %>
-    <% end %>
-
-    <% if user_signed_in? && current_user.influencer && @campaign.reward_type == "Paid Job"%>
-
-    <div class="col-sm-8 col-sm-offset-2 form-container">
-      <h3>Apply</h3>
-      <%= render 'applications/application_form' %>
-    </div>
-
-    <% end %>
-
-  </div>
-</div>
 
 
 <% content_for(:after_js) do %>
