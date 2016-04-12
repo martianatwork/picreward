@@ -4,11 +4,13 @@
 $(document).ready(function() {
   $('.insta-applier-item').on('click', function(elem){
     console.log(elem);
-    var infl_id = $(elem.target).data("id");
+    var app_id = $(elem.target).data("idApp");
+    var cpgn_id = $(elem.target).data("idCpgn");
+    // /campaigns/:campaign_id/applications/:id
     vex.defaultOptions.className = 'vex-theme-default';
 
     $.ajax({
-     url: 'http://localhost:3000/influencers/' + infl_id,
+     url: 'http://localhost:3000/campaigns/'+ cpgn_id + '/applications/' + app_id,
      type:'GET',
      success: function(data){
       // console.log(data);

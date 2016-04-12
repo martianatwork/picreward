@@ -1,6 +1,5 @@
 <%= stylesheet_link_tag    'vex' %>
 <%= stylesheet_link_tag    'vex-theme-default' %>
-<script src="vex.combined.min.js"></script>
 
 
 <div class="banner insta-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('<%= @business.photo%>') ">
@@ -48,7 +47,7 @@
         <div class='insta-appliers-title'><h4>Applicants</h4></div>
         <div class='insta-appliers'>
           <%(campaign.applications).each do |application| %>
-            <%= link_to image_tag(application.influencer.photo, { "data-id": application.influencer.id, class:"avatar-large insta-applier-item" }), "#" %>
+            <%= link_to image_tag(application.influencer.photo, { "data-id-app": application.id,"data-id-cpgn": application.campaign.id, class:"avatar-large insta-applier-item" }), "#" %>
 
           <% end %>
         </div>
