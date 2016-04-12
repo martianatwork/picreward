@@ -14,10 +14,10 @@ class CampaignPolicy < BasePolicy
   end
 
   def update?
-    record.business == user.business
+    user.business && record.business == user.business
   end
 
   def destroy?
-    record.business == user.business
+    user.business && record.business == user.business
   end
 end

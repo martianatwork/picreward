@@ -57,7 +57,6 @@ class CampaignsController < ApplicationController
     authorize @campaign
   end
 
-
   def update
     authorize @campaign
     @campaign.update(campaign_params)

@@ -8,9 +8,6 @@
           <% if policy(@campaign).update? %>
           <%= link_to 'Edit', edit_campaign_path(@campaign), class:"btn action-button" %>
           <% end %>
-          <% if policy(@campaign).destroy? %>
-          <%= link_to 'Destroy', @campaign, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn action-button" %>
-          <% end %>
         </div>
       </div>
 
