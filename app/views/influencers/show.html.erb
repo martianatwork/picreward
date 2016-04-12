@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 container-instagram">
+       <!--  <div class="insta-pic col-xs-7", style="background-image: url(<%= cl_image_path @influencer.photo %>);"></div> -->
         <div class="insta-pic-influencer col-xs-7">
         <h1>Top Photos</h1>
           <% (Pic.order(likes: :desc).where("influencer_id = ?", @influencer.id).limit(3)).each do |pic|%>
@@ -21,9 +22,6 @@
           <p><%= @influencer.avg_photo_likes %></p>
           <h4>Comments/Photo Ratio</h4>
           <p><%= @influencer.avg_photo_comments %></p>
-
-
-
         </div>
       </div>
     </div>
