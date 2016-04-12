@@ -1,38 +1,32 @@
-<div class="wrapper-influencer-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 container-instagram">
-       <!--  <div class="insta-pic col-xs-7", style="background-image: url(<%= cl_image_path @influencer.photo %>);"></div> -->
-        <div class="insta-pic-influencer col-xs-7">
-        <h1>Top Photos</h1>
-          <% (Pic.order(likes: :desc).where("influencer_id = ?", @influencer.id).limit(3)).each do |pic|%>
-            <%= image_tag pic.pic_url, class: "app-top-pic-influencer" %>
-            <%=pic.likes%> likes
-          <% end %>
-        </div>
-        <div class="col-xs-4 insta-description">
-          <h1><%= @influencer.username %></h1>
-          <h4>First Name</h4>
-          <p><%= @influencer.first_name %> </p>
-          <h4>Last Name</h4>
-          <p><%= @influencer.last_name %></p>
-          <h4>Followers</h4>
-          <p><%= @influencer.followers %></p>
-          <h4>Likes/Photo Ratio</h4>
-          <p><%= @influencer.avg_photo_likes %></p>
-          <h4>Comments/Photo Ratio</h4>
-          <p><%= @influencer.avg_photo_comments %></p>
-        </div>
-      </div>
+
+<div class="business-card-container">
+ <div class="card-carroussel">
+   <div class="card-pic">
+
+    <% (Pic.order(likes: :desc).where("influencer_id = ?", @influencer.id).limit(1)).each do |pic|%>
+    <div class="card-background" style="background: url('<%= pic.pic_url %>');">
+    <%= @likes = pic.likes%>
+
     </div>
+    <% end %>
   </div>
+</div>
+<div>
+  <p> <i class="fa fa-heart"></i><%= @likes %></p>
+  <p><%= @influencer.followers %></p>
+  <h4>Likes/Photo Ratio</h4>
+  <p> <i class="fa fa-heart-o"></i><%= @influencer.avg_photo_likes %> / Photo</p>
+  <h4>Comments/Photo Ratio</h4>
+  <p><%= @influencer.avg_photo_comments %></p>
+  <hr class="line">
+
+
+  <i class="fa fa-heart-o"></i>    Love it? Check it!
+
 </div>
 
 
-
-
-
-
+</div>
 
 
 
