@@ -1,5 +1,5 @@
 .container-instagram {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,14 +8,15 @@
 .insta-pic {
   height: 100%;
   background-size: cover;
-  background-position: center-top;
+  background-position: center center;
   height: 80vh;
   background-repeat: no-repeat;
 }
 
 .insta-description {
-  height: 80vh;
-  background-color: white
+  background-color: white;
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0.09);
 }
 .wrapper-influencer-show {
   background-color: $gray-light;
