@@ -45,6 +45,12 @@
   padding: 10px;
 }
 
+@media only screen and (min-width: xs) and (min-width: sm) {
+  .insta-pic-business-home {
+    max-width: 100%;
+  }
+}
+
 .insta-pic-business-home {
   background: url('http://www.senseimarketing.com/wp-content/uploads/2015/08/Instagram-Advertising.png');
   height: 100%;
