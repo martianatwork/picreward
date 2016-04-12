@@ -103,6 +103,25 @@
   font-size: 13px;
 }
 
+.insta-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .action-button {
+    margin: 5px 15px;
+    padding: 0 20px;
+    border-radius: 2em;
+    line-height: 40px;
+    color: $brand-blue;
+    font-size: 14px;
+    border: 0.6px solid $brand-blue;
+  }
+  .action-button:hover {
+    color: $flashy-blue;
+    transition: 0.7s;
+    border: 0.6px solid $flashy-blue;
+  }
+}
 .insta-title {
   font-size: 22px;
   font-weight: bold;
