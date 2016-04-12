@@ -1,4 +1,3 @@
-
 .container-show {
   background-color: white;
   padding: 20px;
@@ -9,15 +8,149 @@
   margin-bottom: 50px;
 }
 
-
-.business-show-banner {
-  height: 200px;
-  width: 400px
+.insta-business-card-container {
+  background: white;
+  border: 1px solid $gray-light;
+  margin: auto;
+  border-radius: 3px;
+  max-width: 500px;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
 }
 
+
 .insta-pic-business-show {
-  height: 100%;
   background-size: cover !important;
-  height: 80vh;
-  background-repeat: no-repeat;
+  height: 200px !important;
+  background-position: center center;
+  position: relative;
+  border-radius: 3px;
+}
+
+.insta-banner {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  background-size: cover !important;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.insta-business-edit {
+  background: red;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 2em;
+  border: 0.6px solid white;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+.insta-business-delete {
+  background: red;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 2em;
+  border: 0.6px solid white;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.insta-business-edit:hover, .insta-business-delete:hover {
+  color: white;
+  opacity: 0.8;
+}
+.insta-business-name {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.insta-business-special {
+  color: $brand-blue;
+  margin-bottom: 30px;
+}
+
+
+.insta-budget-container {
+  color: white;
+  padding: 20px;
+  position: absolute;
+  bottom: 0
+}
+
+.insta-budget {
+  font-weight: bolder;
+  font-size: 24px;
+  font-family: Montserrat;
+  letter-spacing: 0px
+}
+
+.insta-product {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 23px;
+  margin: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.insta-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Montserrat;
+  letter-spacing: -2px;
+  color: black;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.insta-instruction {
+  padding: 0px 20px;
+  color: #797979;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.insta-obligations {
+  padding: 20px;
+}
+
+.insta-timeline {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta-timeline-start{
+  color:#C95855;
+}
+
+.insta-timeline-line{
+  padding: 0 20px;
+  flex: 1 0 auto;
+  color: #C95855;
+}
+
+.insta-timeline-color {
+  color: #C95855 !important;
+}
+.insta-timeline-end{
+  color: #C95855;
+}
+
+.insta-appliers-title {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.insta-appliers {
+  padding: 20px;
 }

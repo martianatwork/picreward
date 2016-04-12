@@ -13,5 +13,9 @@
       </div>
     </div>
   </div>
+  <div class="btn text-center">
+  <%= link_to "  Profile  ", edit_business_path(@business), class: "insta-business-edit"%>
+  <%= link_to "  Delete  ", business_path(@business), method: :delete, class: "insta-business-delete"%>
+  </div>
 </div>
 

@@ -1,48 +1,54 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 container-instagram">
-      <div class="insta-pic col-xs-7", style="background-image: url(<%= cl_image_path @business.photo %>);">
-      </div>
-      <div class="col-xs-4 insta-description">
-        <h1><%=@business.name%></h1>
-        <h4>Contact</h4>
-        <p><%= @business.contact_name%> </p>
-        <h4>Address</h4>
-        <p><%= @business.address %></p>
-        <h4>Campaigns</h4>
+
+<div class="banner insta-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('<%= @business.photo%>') ">
+  <div class="banner-content">
+    <h1 class="text-center insta-business-name"><%=@business.name%></h1>
+  </div>
+</div>
 
 
-<h1 class="text-center" style="color: #C95855;"><%=@business.name%></h1>
+<h1 class="text-center insta-business-special">My campaigns</h1>
 
 <% (@business.campaigns).each do |campaign| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 container-instagram">
-        <div class="insta-pic-business-show col-xs-4" style="background-image: url('<%= campaign.photo %>');">
+
+  <div class="insta-business-card-container">
+      <div class="insta-pic-business-show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= campaign.photo %>');">
+        <div class='insta-budget-container'>
+          <div class='insta-budget'>
+            <%= campaign.budget %>€
+          </div>
         </div>
-        <div class="col-xs-7 insta-description" style="padding-left: 20px;" >
-          <h2 style="margin-bottom: 30px;">
+        <div class='insta-product'><%=campaign.product%></div>
+      </div>
+      <div class="insta-description">
+        <div class='insta-title'>
           <%= link_to campaign.title, campaign_path(campaign) %>
-          </h2>
+        </div>
+        <div class='insta-instruction'>
+          <%=campaign.instructions%>
+        </div>
+        <div class='insta-timeline'>
+          <div class='insta-timeline-start'>
+            <i class="fa fa-flag insta-flag" aria-hidden="true"></i> <%= campaign.start_time %>
+          </div>
+          <div class="insta-timeline-line">
+            <hr class="insta-timeline-color">
+          </div>
+          <div class='insta-timeline-end'>
+            <i class="fa fa-flag-checkered insta-flag" aria-hidden="true"></i><%= campaign.end_time %>
+          </div>
+        </div>
+        <div class="insta-obligations">
+          Vous allez devoir envoyer <strong><%=campaign.pics_to_upload%></strong> photos, nous en selectionnerons <strong><%=campaign.pics_to_post%></strong> à poster
+        </div>
 
-          <h4><%=campaign.product%></h4>
-          <p>Description: <%= campaign.description %></p>
-          <p>Instructions: <%=campaign.instructions%></p>
-          <p>Budget: <%=campaign.budget%></p>
-          <p>Start: <%=campaign.start_time%></p>
-          <p>End: <%=campaign.end_time%></p>
-          <p>Pics demanded: <%=campaign.pics_to_upload%></p>
-          <p>Pics to post: <%=campaign.pics_to_post%></p>
-
-          <h4 style="margin-top: 20px">Instagrammers</h4>
-            <%(campaign.applications).each do |application| %>
-              <%= link_to image_tag(application.influencer.photo, class:"avatar-large"), influencer_path(application.influencer) %> <br>
-              <%= application.influencer.username%>
+        <div class='insta-appliers-title'><h4>Applicants</h4></div>
+        <div class='insta-appliers'>
+          <%(campaign.applications).each do |application| %>
+            <%= link_to image_tag(application.influencer.photo, class: "avatar-large insta-applier-item"), influencer_path(application.influencer) %>
           <% end %>
         </div>
-
       </div>
-    </div>
   </div>
+
 <% end %>
 
