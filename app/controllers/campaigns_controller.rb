@@ -57,10 +57,9 @@ class CampaignsController < ApplicationController
     authorize @campaign
   end
 
-
   def update
-    @campaign.update(campaign_params)
     authorize @campaign
+    @campaign.update(campaign_params)
     redirect_to campaign_path(@campaign)
   end
 

@@ -50,6 +50,6 @@ class InfluencersController < ApplicationController
   end
 
   def find_influencer
-    @influencer = Influencer.find(params[:id])
+    @influencer = Influencer.find_by_user_id(current_user)
   end
 end
