@@ -11,20 +11,38 @@
         <p><%= @business.address %></p>
         <h4>Campaigns</h4>
 
-        <% (@business.campaigns).each do |campaign| %>
-        <p><%= link_to campaign.title, campaign_path(campaign) %></p>
-        <% end %>
 
-        <h4>Instagrammers</h4>
-        <% (@business.campaigns).each do |campaign| %>
-        <%(campaign.applications).each do |application| %>
-        application.influencer.username
-        application.influencer.photo
-        <% end %>
-        <% end %>
-        <img src="http://media1.popsugar-assets.com/files/2014/02/18/064/n/28443503/8432f3e88dc98fb8_5a037b0697b311e39d9c1284ed10107c_8.jpg.xxxlarge/i/girlsSource-Instagram-user-fitchicksintraining.jpg" alt="" class="src" style="border-radius: 50%; width: 150px; padding: 20px">
+<h1 class="text-center" style="color: #C95855;"><%=@business.name%></h1>
+
+<% (@business.campaigns).each do |campaign| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 container-instagram">
+        <div class="insta-pic-business-show col-xs-4" style="background-image: url('<%= campaign.photo %>');">
+        </div>
+        <div class="col-xs-7 insta-description" style="padding-left: 20px;" >
+          <h2 style="margin-bottom: 30px;">
+          <%= link_to campaign.title, campaign_path(campaign) %>
+          </h2>
+
+          <h4><%=campaign.product%></h4>
+          <p>Description: <%= campaign.description %></p>
+          <p>Instructions: <%=campaign.instructions%></p>
+          <p>Budget: <%=campaign.budget%></p>
+          <p>Start: <%=campaign.start_time%></p>
+          <p>End: <%=campaign.end_time%></p>
+          <p>Pics demanded: <%=campaign.pics_to_upload%></p>
+          <p>Pics to post: <%=campaign.pics_to_post%></p>
+
+          <h4 style="margin-top: 20px">Instagrammers</h4>
+            <%(campaign.applications).each do |application| %>
+              <%= link_to image_tag(application.influencer.photo, class:"avatar-large"), influencer_path(application.influencer) %> <br>
+              <%= application.influencer.username%>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
+<% end %>
 

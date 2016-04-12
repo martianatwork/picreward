@@ -38,9 +38,12 @@
     </div>
   </div>
   <div class="row">
-
     <% if user_signed_in? && @campaign.business %>
     <% if @campaign.business.user == current_user %>
+
+  <%# if @campaign.business %>
+    <%# if user_signed_in? && @campaign.business.user == current_user %>
+
     <div class="col-sm-8 col-sm-offset-2 form-container">
       <h1 class="text-center">Applications</h1>
       <% (@campaign.applications).each do |application| %>
