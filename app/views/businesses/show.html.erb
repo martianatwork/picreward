@@ -4,50 +4,70 @@
   </div>
 </div>
 
+<div>
 
-<h1 class="text-center insta-business-special">My campaigns</h1>
+  <div class="tabs">
+    <a class="tab active" data-target="#my_campaigns_wrapper">
+      <h3><i class="fa fa-users"></i>  My Campaigns</h3>
+    </a>
+    <a class="tab" data-target="#analytics_wrapper">
+      <h3><i class="fa fa-line-chart"></i>  Analytics</h3>
+    </a>
+  </div>
 
-<% (@business.campaigns).each do |campaign| %>
+  <div id="my_campaigns_wrapper" class="tab-content">
 
-  <div class="insta-business-card-container">
-      <div class="insta-pic-business-show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= campaign.photo %>');">
-        <div class='insta-budget-container'>
-          <div class='insta-budget'>
-            <%= campaign.budget %>€
+    <% (@business.campaigns).each do |campaign| %>
+
+      <div class="insta-business-card-container">
+          <div class="insta-pic-business-show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= campaign.photo %>');">
+            <div class='insta-budget-container'>
+              <div class='insta-budget'>
+                <%= campaign.budget %>€
+              </div>
+            </div>
+            <div class='insta-product'><%=campaign.product%></div>
           </div>
-        </div>
-        <div class='insta-product'><%=campaign.product%></div>
+          <div class="business-insta-description">
+            <div class='insta-title'>
+              <%= link_to campaign.title, campaign_path(campaign) %>
+            </div>
+            <div class='insta-instruction'>
+              <%=campaign.instructions%>
+            </div>
+            <div class='insta-timeline'>
+              <div class='insta-timeline-start'>
+                <i class="fa fa-flag-o insta-flag" aria-hidden="true"></i> <%= campaign.start_time %>
+              </div>
+              <div class="insta-timeline-line">
+                <hr class="insta-timeline-color">
+              </div>
+              <div class='insta-timeline-end'>
+                <i class="fa fa-flag-checkered insta-flag" aria-hidden="true"></i> <%= campaign.end_time %>
+              </div>
+            </div>
+            <div class="insta-obligations">
+              Vous allez devoir envoyer <strong><%=campaign.pics_to_upload%></strong> photos, nous en selectionnerons <strong><%=campaign.pics_to_post%></strong> à poster
+            </div>
+
+            <div class='insta-appliers-title'><h4>Applicants</h4></div>
+            <div class='insta-appliers'>
+              <%(campaign.applications).each do |application| %>
+                <%= link_to image_tag(application.influencer.photo, { "data-id-app": application.id,"data-id-cpgn": application.campaign.id, class:"avatar-large insta-applier-item" }), "#" %>
+
+              <% end %>
+            </div>
+          </div>
       </div>
-      <div class="business-insta-description">
-        <div class='insta-title'>
-          <%= link_to campaign.title, campaign_path(campaign) %>
-        </div>
-        <div class='insta-instruction'>
-          <%=campaign.instructions%>
-        </div>
-        <div class='insta-timeline'>
-          <div class='insta-timeline-start'>
-            <i class="fa fa-flag-o insta-flag" aria-hidden="true"></i> <%= campaign.start_time %>
-          </div>
-          <div class="insta-timeline-line">
-            <hr class="insta-timeline-color">
-          </div>
-          <div class='insta-timeline-end'>
-            <i class="fa fa-flag-checkered insta-flag" aria-hidden="true"></i> <%= campaign.end_time %>
-          </div>
-        </div>
-        <div class="insta-obligations">
-          Vous allez devoir envoyer <strong><%=campaign.pics_to_upload%></strong> photos, nous en selectionnerons <strong><%=campaign.pics_to_post%></strong> à poster
-        </div>
 
-        <div class='insta-appliers-title'><h4>Applicants</h4></div>
-        <div class='insta-appliers'>
-          <%(campaign.applications).each do |application| %>
-            <%= link_to image_tag(application.influencer.photo, { "data-id-app": application.id,"data-id-cpgn": application.campaign.id, class:"avatar-large insta-applier-item" }), "#" %>
+    </div>
 
-          <% end %>
-        </div>
-      </div>
+    <div id="analytics_wrapper" class="tab-content hidden">
+
+      <!-- Code pour la tab Analytics ici -->
+
+    </div>
+
   </div>
 
 <% end %>

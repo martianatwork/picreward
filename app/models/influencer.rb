@@ -5,35 +5,22 @@ class Influencer < ActiveRecord::Base
   has_many :places, dependent: :destroy
   has_many :pics, dependent: :destroy
 
-  # mount_uploader :photo, PhotoUploader
-
-
-  # validates :username, presence: true, uniqueness: true
-  # validates :address, presence: true
-  # validates :number, presence: true
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-
-  def self.avg_photo_comments(token)
-    total = 0
-    client = Instagram.client(:access_token => token)
-    client.user_recent_media.each do |media_item|
-      total += media_item.comments[:count]
-    end
-    total / 20
-  end
-
 
   def self.create_for(user)
-   comments_count = 0
-   likes_count = 0
    influencer = self.create(
     user: user)
    influencer.save!
-   # byebug
+   influencer.create_or_update_info(user, influencer)
     # client = Instagram.client(:access_token => "242894001.749d805.0696daa690cc44fabb22accca07be530")
-    client = Instagram.client(:access_token => user.token)
-    client.user_recent_media.each do |media_item|
+  end
+
+  def create_or_update_info(user, influencer)
+   delete_old_data(influencer)
+   comments_count = 0
+   likes_count = 0
+
+   client = Instagram.client(:access_token => user.token)
+   client.user_recent_media.each do |media_item|
      likes_count += media_item.likes[:count]
      comments_count += media_item.comments[:count]
      influencer.top_hashtags(media_item)
@@ -55,23 +42,14 @@ class Influencer < ActiveRecord::Base
 
 
 
-#how to update info when a user is signed in
+  #how to update info when a user is signed in
 
 
   def top_hashtags(media_item)
-    hashtags_hash = {}
     media_item.tags.each do |word|
-      if hashtags_hash[word]
-        hashtags_hash[word] += 1
-      else
-        hashtags_hash[word] = 1
-      end
-    end
-    hashtags_hash.each do |k,v|
       Tag.create(
         influencer: self,
-        name: k,
-        frequency: v)
+        name: word)
     end
   end
 
@@ -90,19 +68,12 @@ class Influencer < ActiveRecord::Base
   def top_places(media_item)
     places_hash = {}
     if media_item.location
-      if places_hash.has_key?(media_item.location.name)
-        places_hash[media_item.location.name] += 1
-      else
-        places_hash[media_item.location.name] = 1
-      end
-    end
-    places_hash.each do |k,v|
       Place.create(
         influencer: self,
-        name: k,
-        frequency: v)
+        name: media_item.location.name)
     end
   end
+
 
   def basic_info(client)
     client.user.each do |info|
@@ -122,12 +93,20 @@ class Influencer < ActiveRecord::Base
     end
 
   end
+
+  def delete_old_data(influencer)
+    Tag.where("influencer_id = ?", influencer.id).each do |tag|
+      tag.destroy
+    end
+    Place.where("influencer_id = ?", influencer.id).each do |place|
+      place.destroy
+    end
+    Pic.where("influencer_id = ?", influencer.id).each do |pic|
+      pic.destroy
+    end
+  end
+
 end
-
-  # t.string   "first_name"
-  #   t.string   "last_name"
-  #  t.string   "photo"
-
 
 
  # def import_followers

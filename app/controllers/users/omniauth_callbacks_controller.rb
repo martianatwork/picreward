@@ -1,9 +1,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-def instagram
+  def instagram
     user = User.find_for_oauth(request.env['omniauth.auth'])
 
     if user.persisted?
       # user.influencer.create_for(user)
+      # if user.influencer?
+        influencer = user.influencer
+        user.influencer.create_or_update_info(user, influencer)
+
+      # end
       sign_in_and_redirect user, event: :authentication
       set_flash_message(:notice, :success, kind: 'Instagram') if is_navigational_format?
     else

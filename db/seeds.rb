@@ -23,12 +23,10 @@
 
   Place.create(
     name: Faker::Address.street_address,
-    frequency: Faker::Number.between(1, 5),
     )
 
   Tag.create(
     name: Faker::Lorem.words(4),
-    frequency: Faker::Number.between(1, 5),
     )
 
   Influencer.create(
