@@ -13,12 +13,6 @@
   left: 250px;
   padding: 50px;
 }
-.business-home-banner-content-up{
-  position: absolute;
-  top: 100px;
-  left: 430px;
-  padding: 50px;
-}
 
 .business-home-banner-content p {
   font-family: Montserrat;
@@ -27,13 +21,7 @@
   color: white;
   opacity: 0.9;
 }
-.business-home-banner-content-up p {
-  font-family: Montserrat;
-  font-weight: lighter;
-  font-size: 35px;
-  color: white;
-  opacity: 0.9;
-}
+
 // insta-box
 .influencer-home-flexbox {
   display: flex;
@@ -100,6 +88,13 @@
   align-items: stretch;
   padding-bottom: 50px;
 }
+
+// Benefits
+
+.title-business-home {
+  color: #648BB6 !important;
+}
+
 
 
 
