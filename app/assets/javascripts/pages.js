@@ -8,6 +8,7 @@ function scrollToElement (selector) {
   }, 2000);
 };
 
-$(document).on('click', 'a.link-details', function () {
+$(document).on('click', 'a.link-details', function (e) {
+  e.preventDefault
   scrollToElement($(this).attr('href'));
 });
