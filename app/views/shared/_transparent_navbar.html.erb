@@ -85,15 +85,15 @@
     <% else %>
 
     <!-- Login text link -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item brand-button btn" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item brand-button brand-button-transparent btn" %>
 
     <% end %>
 
     <!-- Button (call-to-action) -->
     <% if user_signed_in? && current_user.influencer %>
-      <%= link_to t(".top_call_to_action", default: "See Jobs"), campaigns_path, class: "navbar-wagon-item brand-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "See Jobs"), campaigns_path, class: "navbar-wagon-item brand-button brand-button-transparent btn" %>
     <% elsif user_signed_in? && current_user.business.present? %>
-      <%= link_to t(".top_call_to_action", default: "Dashboard"), business_path(current_user), class: "navbar-wagon-item brand-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Dashboard"), business_path(current_user), class: "navbar-wagon-item brand-button brand-button-transparent btn" %>
     <% end %>
   </div>
 
