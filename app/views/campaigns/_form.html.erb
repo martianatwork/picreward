@@ -1,7 +1,7 @@
 <%= simple_form_for(@campaign) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :reward_type, collection: [ "Paid Job", "Local Swap"], as: :radio_buttons %>
+  <%= f.input :reward_type, collection: [ "Local Swap", "Paid Job"], as: :radio_buttons, item_wrapper_tag: nil, item_wrapper_class: nil, :checked => "Local Swap" %>
   <%= f.input :target_location, label: 'Target Location (if local)', placeholder: '3 Rue de la Paix, 75002 Paris, France' %>
   <%= f.input :title %>
   <%= f.input :product %>
@@ -15,6 +15,7 @@
   <%= f.input :pics_to_post %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-
-  <%= f.button :submit %>
+  <div class="text-center">
+  <%= f.button :submit, class: "brand-button"%>
+  </div>
 <% end %>
