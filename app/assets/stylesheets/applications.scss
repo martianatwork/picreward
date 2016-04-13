@@ -75,3 +75,10 @@ a:hover {
   justify-content: space-between;
   align-items: center
 }
+
+.radio_buttons label {
+  margin-left: 20px;
+  input {
+    margin-right: 5px;
+  }
+}
