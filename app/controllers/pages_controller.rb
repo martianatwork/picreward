@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :businesses_home, :influencers_home]
   before_action :skip_authorization
-  before_filter :disable_nav, only: [:home]
+  before_filter :disable_nav, only: [:home, :businesses_home, :influencers_home]
   before_filter :disable_footer, only: [:home]
 
   def home
