@@ -10,17 +10,17 @@ $(document).ready(function() {
     vex.defaultOptions.className = 'vex-theme-default';
 
     $.ajax({
-     url: 'http://localhost:3000/campaigns/'+ cpgn_id + '/applications/' + app_id,
+     url: '/campaigns/'+ cpgn_id + '/applications/' + app_id,
      type:'GET',
      success: function(data){
-      // console.log(data);
-        response = $($.parseHTML(data)).filter(".insta-business-card-container");
+      // console.log(($.parseHTML(data)).filter($(".app-show-left-container")));
+        response = $($.parseHTML(data));
         vex.open({
           content: response,
           contentCSS: {
-            width: '800px',
+            'min-width': '1000px',
             // position:'absolute',
-            // 'margin': 'auto',
+            'margin-top': '10px',
             // top:'10px',
             // left:'40px',
           },

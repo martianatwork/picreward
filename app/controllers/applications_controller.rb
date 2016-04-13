@@ -11,6 +11,8 @@ class ApplicationsController < ApplicationController
     if @application == nil
       redirect_to campaign_path(@campaign)
     end
+
+    # render :show, layout: false
   end
 
   def new
