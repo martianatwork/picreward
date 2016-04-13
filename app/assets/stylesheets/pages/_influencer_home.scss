@@ -1,3 +1,86 @@
+// banner
+.influencer-home-banner{
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center center;
+  position: relative;
+  margin-bottom: 40px;
+}
+.influencer-home-banner  p {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 50px;
+  color: white;
+  opacity: 0.8;
+}
+
+.influencer-home-banner-content{
+  max-width: 600px;
+  position: absolute;
+  bottom: 50px;
+  left:0;
+  padding: 50px;
+
+}
+
+.influencer-home-banner-content-2{
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  padding-left: 50px;
+  padding-bottom: 40px;
+
+}
+
+// local swap
+.wrapper-local-swap{
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+
+.restaurant-pic {
+  flex: 1;
+  background: url('http://pose.com.vn/images/baiviet/201508/ae24338c508d34d5f9d98ccbccc97c5d.jpg');
+  background-position: center center;
+}
+
+.food-pic {
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('http://www.appschopper.com/blog/wp-content/uploads/2015/08/photo-634069_1920.jpg');
+  background-position: center center;
+}
+
+.container-local-swap {
+  position: absolute;
+  min-height: 500px;
+  max-width: 300px;
+  bottom:80px;
+  left: 500px;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 3px;
+}
+
+.container-local-swap h1 {
+  margin-bottom: 50px;
+}
+
+.container-local-swap p {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+// instagram card suggesting action
 .influencer-home-flexbox {
   display: flex;
   background-color: white;
@@ -7,6 +90,7 @@
   background-color: $gray-body;
   opacity: 0.8;
   max-height: 150vh;
+  margin-bottom: 30px;
 }
 
 .title-swipebox{
@@ -61,12 +145,13 @@
   min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: stretch;
   padding-bottom: 50px;
 }
 
 .influencer-home-button-container {
-  margin: auto;
+  padding-left: 125px;
+  padding-bottom: 20px;
+  align-items: center;
   padding-bottom: 10px
 }
 
