@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 20160408093916) do
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
-    t.integer  "frequency"
     t.integer  "influencer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -107,7 +106,6 @@ ActiveRecord::Schema.define(version: 20160408093916) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.integer  "frequency"
     t.integer  "influencer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

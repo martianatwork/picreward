@@ -1,77 +1,110 @@
 // Place all the styles related to the applications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.app-top-pic-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.app-top-pic {
-  border-radius: 40px;
-  width: 125px;
-  padding: 20px;
-}
 
-.avatar-app {
-  border-radius: 50%;
-  width: 130px;
-  padding: 20px;
-}
+// .app-top-pic {
+//   border-radius: 40px;
+//   width: 125px;
+//   padding: 20px;
+// }
 
-.app-show-container {
-  height: 100vh;
-}
+// .avatar-app {
+//   border-radius: 50%;
+//   width: 130px;
+//   padding: 20px;
+// }
 
-.app-show-left-container {
-  flex: 1
-}
-.app-show-right-container {
-  flex:2;
-  margin-left: 20px
-}
 
-.app-show-row {
-  margin-top: 20px;
-  display:flex;
-}
 
-.flexbox-app-show {
-  display: flex;
-  justify-content: space-between;
-}
+// .app-show-left-container {
+//   flex: 2
+// }
+// .app-show-right-container {
+//   flex:2;
+//   margin-left: 20px
+// }
+
+// .app-show-row {
+//   margin-top: 20px;
+//   display:flex;
+// }
+
+// .flexbox-app-show {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 a:hover {
   text-decoration: none;
 }
 
-.app-status-form {
-  padding-top: 20px;
-  padding-left: 30px;
+// .app-status-form {
+//   padding-top: 20px;
+//   padding-left: 30px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 0;
+// }
+
+// .app-show-influencer-pics {
+//   margin-bottom:0px;
+//   margin-bottom: 20px;
+//   margin-top: 0;
+// }
+
+// .app-infos-container {
+//   margin: 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+// }
+
+// .app-show-status {
+//   padding-top: 20px;
+//   padding-left: 30px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center
+// }
+
+
+
+
+
+
+
+// --------------------------------
+
+
+.app-show-container {
+  height: 100vh;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
+}
+.app-show-left-container{
+  flex: 1;
 }
 
-.app-show-influencer-pics {
-  margin-bottom:0px;
-  margin-bottom: 20px;
-  margin-top: 0;
+.info-container {
+  flex: 1;
 }
 
-.app-infos-container {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.app-top-pic-container {
+  height: 350px;
+  background-size: cover !important;
+  background-position: center center !important;
+
+}
+.influencer-card {
+  max-width: 500px;
+  background-color: white;
 
 }
 
-.app-show-status {
-  padding-top: 20px;
-  padding-left: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center
+.padding-text {
+  padding: 10px;
 }
+

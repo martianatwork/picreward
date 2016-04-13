@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   def influencer?
     provider == 'instagram'
   end
-#pk pas en dessous de init influencer
 
 def initialize_influencer
   if (influencer?)
@@ -21,6 +20,7 @@ def initialize_influencer
 end
 
 def self.find_for_oauth(auth)
+  # byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -30,23 +30,8 @@ def self.find_for_oauth(auth)
       user.email = auth.info.nickname + "@example.com"
       user.save!
 
-#est-ce que je dois renvoyer vers influencer.create?
-#ou vers le moel de Influencer?
-#Best Practices?
-#Comment récupérer l'id de l'objet
-#Refacto pour appeler une fois l'API
     end
-    # influencer = Influencer.create(
-    #   user_id: 5,
-    #   avg_photo_comments: Influencer.avg_photo_comments(self.token),
-    #   avg_photo_likes: Influencer.avg_photo_likes(self.token),
-    #   followers: Influencer.followers(self.token),
-    #   username: Influencer.username(self.token)
-    #   )
 
-    #   influencer.top_hashtags(self.token)
-    #   influencer.top_places(self.token)
-    #   infleuncer.save!
   end
 
 end
