@@ -3,83 +3,107 @@
 
   <div class="app-show-container">
 
-    <div class="app-show-left-container">
-      <div class="influencer-card">
-        <% (Pic.order(likes: :desc).where("influencer_id = ?", @application.influencer.id).limit(1)).each do |pic| %>
-        <div class="app-top-pic-container" style="background: url('<%= pic.pic_url %>')";>
-        </div>
-        <div class="padding-text">
-         <i class="fa fa-heart-o" ></i> <%= pic.likes %>
+    <div class="influencer-card">
+      <div class="appliers-pres">
+        <div class="applier-avatar-large">
+         <%= image_tag @application.influencer.photo, class: "avatar-large" %>
        </div>
-       <% end %>
-       <div class="top-tags">
+       <div class="applier-first-name">
+         <p><%= @application.influencer.first_name %></p>
+
+       </div>
+     </div>
+     <% (Pic.order(likes: :desc).where("influencer_id = ?", @application.influencer.id).limit(1)).each do |pic| %>
+     <div class="app-top-pic-container" style="background: url('<%= pic.pic_url %>')";>
+     </div>
+     <div class="padding-campaign-show">
+      <div class="padding-text">
+       <i class="fa fa-heart-o" ></i> <%= pic.likes %>
+     </div>
+     <% end %>
+     <div class="line-break"></div>
+     <div class="padding-text top-tags">
+       <span><%= @application.influencer.first_name %>'s Top Hashtags:
          <% Tag.where("influencer_id = ?", 30).group(:name).order(count: :desc).limit(3).count.each do |t| %>
-         <%= t[1] %>
-         #<%= t[0] %>
-         <% end %>
-       </div>
-       <div class="top-places">
-         <% Place.where("influencer_id = ?", 30).group(:name).order(count: :desc).limit(3).count.each do |t| %>
-         <%= t[1] %>
-         <%= t[0] %>
-         <% end %>
-       </div>
-       <div class="average-likes">
-         average-likes <%= @application.influencer.avg_photo_likes
-         %>
-       </div>
-       <div class="average-comments">
-         average-comments <%= @application.influencer.avg_photo_comments
-         %>
-       </div>
-       <div class="followers">
-         followers <%= @application.influencer.followers %>
-       </div>
-
-     </div>
-
-
+       </span><span>#<%= t[0] %>
+       <% end %>
+     </span>
    </div>
+   <div class="padding-text top-places">
+     <span><%= @application.influencer.first_name %>'s Top Places: </span>
+     <ul class="list-places">
+       <% Place.where("influencer_id = ?", 30).group(:name).order(count: :desc).limit(3).count.each do |t| %>
+       <li>@<%= t[0] %></li>
+       <% end %>
 
-
-
-
-   <div class="info-container">
-     <div class="motivation">
-       <%= @application.motivation %>
-     </div>
-     <div class="avatar">
-       <%= image_tag @application.influencer.photo %>
-     </div>
-     <div class="app-show-status form-container">
-       <div>
-         <h4>Status</h4>
-         <% if @application.status == "Pending" %>
-         <p><%= @application.status %></p>
-         <% else %>
-         <p><%= @application.status %>ed</p>
-         <%end%>
-       </div>
-       <div>
-         <h4 class="text-center">Answer the Application</h4>
-         <%= simple_form_for [@campaign, @application], method: :put, url: campaign_application_path(@campaign, @application), :html => {class: 'form-inline text-center'} do |f| %>
-         <%= f.error_notification %>
-
-         <%= f.input :status, collection: [ "Accept", "Reject"], label:false  %>
-
-         <%= f.button :submit, 'Submit' %>
-         <% end %>
-       </div>
-     </div>
+     </ul>
    </div>
-
-
-
+   <div class="padding-text average-likes">
+     <span>Average-likes/photo:</span> <%= @application.influencer.avg_photo_likes
+     %>
+   </div>
+   <div class="padding-text average-comments">
+     <span>Average-comments/photo:</span> <%= @application.influencer.avg_photo_comments
+     %>
+   </div>
+   <div class="padding-text followers">
+     <span><%= @application.influencer.followers %> followers</span>
+   </div>
+   <div class="padding-text motivation">
+     <span>Motivation: </span><%= @application.motivation %>
+   </div>
  </div>
+ <div class="test">
+ <%= link_to image_tag(@application.influencer.photo, { "data-id-app": @application.id,"data-id-cpgn": @application.campaign.id, class:"test" }), "#" %>
+ </div>
+ <div class="info-container">
+
+
+   <div class="app-show-status form-container">
+     <div>
+       <h4>Status</h4>
+       <% if @application.status == "Pending" %>
+       <p><%= @application.status %></p>
+       <% else %>
+       <p><%= @application.status %>ed</p>
+       <%end%>
+     </div>
+     <div>
+
+       <h4 class="text-center">Answer the Application</h4>
+       <%= simple_form_for [@campaign, @application], method: :put, url: campaign_application_path(@campaign, @application), :html => {class: 'form-inline text-center'} do |f| %>
+       <%= f.error_notification %>
+
+       <%= f.input :status, collection: [ "Accept", "Reject"], label:false  %>
+
+       <%= f.button :submit, 'Submit' %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
+</div>
+
+
 
 
 </div>
 
 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 

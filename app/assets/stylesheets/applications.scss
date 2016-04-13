@@ -62,17 +62,19 @@ a:hover {
 
 // }
 
-// .app-show-status {
-//   padding-top: 20px;
-//   padding-left: 30px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center
-// }
+.app-show-status {
+  padding-top: 20px;
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
 
 
 
-
+// display: flex;
+// align-items: center;
+// justify-content: space-between
 
 
 
@@ -82,14 +84,10 @@ a:hover {
 .app-show-container {
   height: 100vh;
   padding: 20px;
-  display: flex;
-}
-.app-show-left-container{
-  flex: 1;
 }
 
+
 .info-container {
-  flex: 1;
 }
 
 .app-top-pic-container {
@@ -101,11 +99,12 @@ a:hover {
 .influencer-card {
   max-width: 500px;
   background-color: white;
+  margin: auto;
 
 }
 
 .padding-text {
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .radio_buttons label {
@@ -114,3 +113,92 @@ a:hover {
     margin-right: 5px;
   }
 }
+
+
+
+.padding-campaign-show{
+  padding: 20px;
+}
+
+
+.appliers-pres{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid $gray-body;
+// justify-content: space-between;
+}
+.applier-avatar-large {
+
+}
+.applier-first-name {
+  padding-left: 10px;
+  padding-top: 15px;
+
+}
+
+.applier-first-name p {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+//  {
+// font-size: 15px;
+// font-weight: bolder;
+// color:$brand-blue;
+// }
+
+.top-tags span:nth-child(2),
+.top-tags span:nth-child(3),
+.top-tags span:nth-child(4) {
+  font-size: 15px;
+// font-weight: bolder;
+color:$gray-dark;
+}
+
+//  {
+// font-size: 15px;
+// font-weight: bolder;
+// color:$brand-blue;
+// }
+.top-places li {
+  color:$gray-dark;
+}
+// .top-places span:nth-child(2),
+// .top-places span:nth-child(3),
+// .top-places span:nth-child(4) {
+// font-size: 15px;
+// // font-weight: bolder;
+// color:$gray-dark;
+// }
+
+.list-places {
+  list-style-type: none;
+}
+
+.padding-text i {
+  font-size: 25px;
+}
+
+
+.line-break {
+  border-bottom: 2px solid $gray-body;
+
+}
+
+.average-likes span,
+.average-comments span,
+.top-places span:nth-child(1),
+.top-tags span:nth-child(1),
+.motivation span {
+  color:$brand-blue;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.test {
+  height: 100px;
+  width:100px;
+  background-color: blue;
+}
+
