@@ -45,7 +45,19 @@
           <% end %>
         </div>
       </div>
+
+      <% if user_signed_in? && current_user.influencer && @campaign.reward_type == "Paid Job"%>
+
+       <div class="apply-box">
+         <h3>Apply</h3>
+         <%= render 'applications/application_form' %>
+       </div>
+
+      <% end %>
+
   </div>
+
+
 
 
 
