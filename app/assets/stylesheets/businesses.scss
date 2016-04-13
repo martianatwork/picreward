@@ -1,3 +1,7 @@
+#my_campaigns_wrapper, #analytics_wrapper {
+  margin-top: 40px;
+}
+
 .container-show {
   background-color: white;
   padding: 20px;
@@ -38,7 +42,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
 }
 
 .insta-business-edit {
@@ -103,6 +106,25 @@
   font-size: 13px;
 }
 
+.insta-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .action-button {
+    margin: 5px 15px;
+    padding: 0 20px;
+    border-radius: 2em;
+    line-height: 40px;
+    color: $brand-blue;
+    font-size: 14px;
+    border: 0.6px solid $brand-blue;
+  }
+  .action-button:hover {
+    color: $flashy-blue;
+    transition: 0.7s;
+    border: 0.6px solid $flashy-blue;
+  }
+}
 .insta-title {
   font-size: 22px;
   font-weight: bold;
@@ -132,20 +154,20 @@
 }
 
 .insta-timeline-start{
-  color:#C95855;
+  color:#F67222;
 }
 
 .insta-timeline-line{
   padding: 0 20px;
   flex: 1 0 auto;
-  color: #C95855;
+  color: #F67222;
 }
 
 .insta-timeline-color {
-  color: #C95855 !important;
+  color: #F67222 !important;
 }
 .insta-timeline-end{
-  color: #C95855;
+  color: #F67222;
 }
 
 .insta-appliers-title {

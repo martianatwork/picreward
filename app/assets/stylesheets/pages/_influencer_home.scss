@@ -1,3 +1,41 @@
+// banner
+.influencer-home-banner{
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center center;
+  position: relative;
+  margin-bottom: 100px;
+}
+.influencer-home-banner  p {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 50px;
+  color: white;
+  opacity: 0.9;
+}
+
+.influencer-home-banner-content{
+  max-width: 600px;
+  position: absolute;
+  bottom: 50px;
+  left:0;
+  padding: 50px;
+
+}
+
+.influencer-home-banner-content-2{
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  padding-left: 50px;
+  padding-bottom: 40px;
+
+}
+
+
+// instagram card suggesting action
 .influencer-home-flexbox {
   display: flex;
   background-color: white;
@@ -6,7 +44,8 @@
 .wrapper-influencer-home {
   background-color: $gray-body;
   opacity: 0.8;
-  max-height: 150vh;
+  min-height: 100vh;
+
 }
 
 .title-swipebox{
@@ -58,15 +97,148 @@
 }
 
 .container-instagram-influencer-home {
-  min-height: 80vh;
+  min-height: 75vh;
   display: flex;
   justify-content: center;
-  align-items: stretch;
   padding-bottom: 50px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 .influencer-home-button-container {
-  margin: auto;
+  padding-left: 125px;
+  padding-bottom: 20px;
+  align-items: center;
   padding-bottom: 10px
 }
+
+
+// type of campaign
+.wrapper-type-campaign {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #648BB6;
+}
+
+.wrapper-type-campaign-content h1 {
+  font-size: 70px;
+  color: white;
+  text-align: center;
+  font-family: Quicksand;
+}
+
+
+// local swap
+.wrapper-local-swap{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  padding: 100px;
+}
+
+.restaurant-pic {
+  flex: 1;
+  background: url('http://pose.com.vn/images/baiviet/201508/ae24338c508d34d5f9d98ccbccc97c5d.jpg');
+  background-position: center center;
+}
+
+.food-pic {
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('http://www.appschopper.com/blog/wp-content/uploads/2015/08/photo-634069_1920.jpg');
+  background-position: center center;
+}
+
+.container-local-swap {
+  position: absolute;
+  min-height: 400px;
+  max-width: 250px;
+  bottom:100px;
+  left: 520px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 3px;
+}
+
+.container-local-swap h1 {
+  margin-bottom: 50px;
+}
+
+.container-local-swap p {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+//Paid Campaign
+.wrapper-paid-campaign{
+  position: relative;
+  height: 75vh;
+  display: flex;
+  background: url('http://stshd.translationllc.netdna-cdn.com/wp-content/uploads/2015/06/yeezy-350-boost-low-ibnjasper-instagram-closeup-photos.jpg');
+  background-position: center bottom;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.paid-campaign-pic-left {
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+}
+.paid-campaign-pic-right {
+  flex: 1;
+}
+.container-paid-campaign {
+  position: absolute;
+  min-height: 400px;
+  max-width: 250px;
+  bottom:0;
+  left: 430px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 3px;
+}
+
+.container-paid-campaign h1 {
+  margin-bottom: 50px;
+}
+
+.container-paid-campaign p {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+//final
+
+.wrapper-influencer-home-final {
+  height: 30vh;
+  margin-top: 100px;
+}
+
+.flex-final-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-final-text h1 {
+  color: #648BB6;
+  font-size: 50px;
+}
+
+.sign-in-influencer-home {
+  padding: 1px 20px;
+}
+
+.final-margin {
+  margin-bottom: 20px
+}
+
+
+
+
+
+
 
