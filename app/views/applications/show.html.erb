@@ -3,83 +3,141 @@
 
   <div class="app-show-container">
 
-    <div class="app-show-left-container">
-      <div class="influencer-card">
-        <% (Pic.order(likes: :desc).where("influencer_id = ?", @application.influencer.id).limit(1)).each do |pic| %>
-        <div class="app-top-pic-container" style="background: url('<%= pic.pic_url %>')";>
-        </div>
-        <div class="padding-text">
-         <i class="fa fa-heart-o" ></i> <%= pic.likes %>
+    <div class="influencer-card">
+      <div class="appliers-pres">
+        <div class="applier-avatar-large">
+         <%= image_tag @application.influencer.photo, class: "avatar-large" %>
        </div>
+       <div class="applier-first-name">
+       <p><%= @application.influencer.first_name %></p>
+       </div>
+<div class="display-middle-flex"></div>
+       <div class="padding-text followers">
+         <span><i class="fa fa-users"></i><%= @application.influencer.followers %></span>
+       </div>
+     </div>
+
+     <!--  -->
+     <div id="cf7">
+      <% pics = Pic.order(likes: :desc).where("influencer_id = ?", @application.influencer.id).limit(3) %>
+      <div class="app-top-pic-container opaque" style="background: url('<%= pics[0].pic_url %>')";>
+        <span> <i class="fa fa-heart-o opaque" ></i> <%= pics[0].likes %></span>
+      </div>
+      <div class="app-top-pic-container" style="background: url('<%= pics[1].pic_url %>')";>
+        <span> <i class="fa fa-heart-o" ></i> <%= pics[1].likes %>
+        </span>
+      </div>
+      <div class="app-top-pic-container" style="background: url('<%= pics[2].pic_url %>')";>
+       <span>  <i class="fa fa-heart-o" ></i> <%= pics[2].likes %>
+       </span>
+     </div>
+   </div>
+
+
+
+   <div id="cf7_controls">
+    <span class="selected"><i class="fa fa-circle-o"></i></span>
+    <span><i class="fa fa-circle-o"></i></span>
+    <span><i class="fa fa-circle-o"></i></span>
+  </div>
+
+
+
+  <div>
+
+    <div class="line-break"></div>
+    <div class="padding-text top-tags">
+     <span>Top Hashtags
+       <% Tag.where("influencer_id = ?", @application.influencer.id).group(:name).order(count: :desc).limit(3).count.each do |t| %>
+     </span><span>#<%= t[0] %>
+     <% end %>
+   </span>
+ </div>
+ <div class="average-wrapper">
+
+   <div class="padding-text top-places">
+     <span>Top Places </span>
+     <ul class="list-places">
+       <% Place.where("influencer_id = ?", @application.influencer.id).group(:name).order(count: :desc).limit(3).count.each do |t| %>
+       <li>@<%= t[0] %></li>
        <% end %>
-       <div class="top-tags">
-         <% Tag.where("influencer_id = ?", 30).group(:name).order(count: :desc).limit(3).count.each do |t| %>
-         <%= t[1] %>
-         #<%= t[0] %>
-         <% end %>
-       </div>
-       <div class="top-places">
-         <% Place.where("influencer_id = ?", 30).group(:name).order(count: :desc).limit(3).count.each do |t| %>
-         <%= t[1] %>
-         <%= t[0] %>
-         <% end %>
-       </div>
-       <div class="average-likes">
-         average-likes <%= @application.influencer.avg_photo_likes
-         %>
-       </div>
-       <div class="average-comments">
-         average-comments <%= @application.influencer.avg_photo_comments
-         %>
-       </div>
-       <div class="followers">
-         followers <%= @application.influencer.followers %>
-       </div>
 
-     </div>
-
-
+     </ul>
    </div>
+   <div class="padding-text average">
+     <span>On Average</span>
+     <ul class="list-places">
+       <li><i class="fa fa-heart-o"></i> <%= @application.influencer.avg_photo_likes
+         %>
+       </li>
+       <li><i class="fa fa-comment-o"></i> <%= @application.influencer.avg_photo_comments
+         %>
+       </li>
 
 
-
-
-   <div class="info-container">
-     <div class="motivation">
-       <%= @application.motivation %>
-     </div>
-     <div class="avatar">
-       <%= image_tag @application.influencer.photo %>
-     </div>
-     <div class="app-show-status form-container">
-       <div>
-         <h4>Status</h4>
-         <% if @application.status == "Pending" %>
-         <p><%= @application.status %></p>
-         <% else %>
-         <p><%= @application.status %>ed</p>
-         <%end%>
-       </div>
-       <div>
-         <h4 class="text-center">Answer the Application</h4>
-         <%= simple_form_for [@campaign, @application], method: :put, url: campaign_application_path(@campaign, @application), :html => {class: 'form-inline text-center'} do |f| %>
-         <%= f.error_notification %>
-
-         <%= f.input :status, collection: [ "Accept", "Reject"], label:false  %>
-
-         <%= f.button :submit, 'Submit' %>
-         <% end %>
-       </div>
-     </div>
+     </ul>
    </div>
-
-
 
  </div>
+ <div class="padding-text motivation">
+   <span>Motivation</span><div><%= @application.motivation %></div>
+ </div>
+
+ <div class="info-container">
+
+
+   <div class="app-show-status form-container">
+     <!-- <div>
+       <h4>Status</h4>
+       <%# if @application.status == "Pending" %>
+       <p><%= @application.status %></p>
+       <%# else %>
+       <p><%= @application.status %>ed</p>
+       <%# end%>
+     </div>
+     <div> -->
+
+       <%= simple_form_for [@campaign, @application], method: :put, url: campaign_application_path(@campaign, @application), :html => {class: 'form-inline order-2 text-center'} do |f| %>
+       <%= f.error_notification %>
+       <%= f.input :status, :as => :hidden, :input_html => { :value => "Accept" }  %>
+       <%= button_tag(type: 'submit', class: "submission is-green") do %>
+       <i class="fa fa-check"></i>
+       <% end %>
+       <% end %>
+
+       <%= simple_form_for [@campaign, @application], method: :put, url: campaign_application_path(@campaign, @application), :html => {class: 'form-inline text-center'} do |f| %>
+       <%= f.error_notification %>
+       <%= f.input :status, :as => :hidden, :input_html => { :value => "Reject" }  %>
+       <%= button_tag(type: 'submit', class: "submission is-red") do %>
+       <i class="fa fa-remove"></i>
+       <% end %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
+</div>
+
+
 
 
 </div>
 
 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 

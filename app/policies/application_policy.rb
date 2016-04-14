@@ -14,7 +14,7 @@ class ApplicationPolicy < BasePolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 
   def destroy?

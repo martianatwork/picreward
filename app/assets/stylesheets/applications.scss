@@ -62,17 +62,19 @@ a:hover {
 
 // }
 
-// .app-show-status {
-//   padding-top: 20px;
-//   padding-left: 30px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center
-// }
+.app-show-status {
+  padding-top: 20px;
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
 
 
 
-
+// display: flex;
+// align-items: center;
+// justify-content: space-between
 
 
 
@@ -82,31 +84,29 @@ a:hover {
 .app-show-container {
   height: 100vh;
   padding: 20px;
-  display: flex;
-}
-.app-show-left-container{
-  flex: 1;
 }
 
-.info-container {
-  flex: 1;
-}
 
-.app-top-pic-container {
-  height: 350px;
-  background-size: cover !important;
-  background-position: center center !important;
 
-}
 .influencer-card {
   max-width: 500px;
   background-color: white;
+  margin: auto;
 
 }
 
 .padding-text {
-  padding: 10px;
+  padding: 5px 10px;
 }
+
+.extra-padding {
+  padding: 15px 10px;
+
+  i {
+    font-size: 25px;
+  }
+}
+
 
 .radio_buttons label {
   margin-left: 20px;
@@ -114,3 +114,225 @@ a:hover {
     margin-right: 5px;
   }
 }
+
+
+
+.padding-campaign-show{
+  padding: 20px;
+}
+
+
+.appliers-pres{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid $gray-body;
+// justify-content: space-between;
+}
+.applier-avatar-large {
+
+}
+.applier-first-name {
+  padding-left: 10px;
+  padding-top: 15px;
+
+}
+
+.applier-first-name p {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+//  {
+// font-size: 15px;
+// font-weight: bolder;
+// color:$brand-blue;
+// }
+
+.top-tags span:nth-child(2),
+.top-tags span:nth-child(3),
+.top-tags span:nth-child(4) {
+  font-size: 18px;
+// font-weight: bolder;
+color:$gray-dark;
+}
+
+
+
+//  {
+// font-size: 15px;
+// font-weight: bolder;
+// color:$brand-blue;
+// }
+.top-places li {
+  color:$gray-dark;
+}
+// .top-places span:nth-child(2),
+// .top-places span:nth-child(3),
+// .top-places span:nth-child(4) {
+// font-size: 15px;
+// // font-weight: bolder;
+// color:$gray-dark;
+// }
+
+.list-places,
+.list-info {
+  list-style-type: none;
+  padding: inherit;
+  font-size: 18px;
+}
+
+
+
+.line-break {
+  border-bottom: 2px solid $gray-body;
+
+}
+
+
+.top-places span:nth-child(1),
+.top-tags span:nth-child(1),
+.motivation span,
+.average span,
+.followers span {
+  color:$brand-blue;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+// .test {
+//   height: 100px;
+//   width:100px;
+//   background-color: blue;
+// }
+
+.average-wrapper {
+  display:flex;
+// text-align: center;
+justify-content: space-between;
+}
+
+.followers {
+  // height:100%
+
+}
+
+.app-show-status {
+  padding: 0;
+
+  form {
+    width: 50%;
+    border: 1px solid $gray-body;
+
+    .submission {
+      width: 100%;
+      height: 100px;
+
+      border: none;
+      color: white;
+
+      &.is-green {
+        color: $green;
+        font-size: 40px;
+        background: white;
+      }
+
+      &.is-red {
+        color: $red;
+        font-size: 40px;
+        background: white;
+      }
+    }
+
+    .submission:hover {
+      width: 100%;
+      height: 100px;
+
+      border: none;
+      color: white;
+
+      &.is-green {
+        color: $green;
+        font-size: 50px;
+        background: $gray-light;
+        transition: 0.3s ease-in;
+      }
+
+      &.is-red {
+        color: $red;
+        font-size: 50px;
+        background: $gray-light;
+        transition: 0.3s ease-in;
+
+      }
+    }
+  }
+}
+
+.order-2 {
+  order: 2;
+}
+
+
+
+#cf7_controls {
+  text-align:center;
+  padding: 10px 0;
+}
+
+#cf7_controls span {
+  padding-right:2em;
+  cursor:pointer;
+}
+#cf7 {
+  position:relative;
+  height:500px;
+  // width:350px;
+  // margin:0 auto 10px;
+}
+#cf7 div {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+#cf7 div.opaque {
+  opacity:1;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1);
+//
+}
+
+.app-top-pic-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center center !important;
+  border: 1px solid $gray-light;
+}
+
+
+#cf7 span,
+{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.display-middle-flex {
+  flex-grow: 3;
+
+}
+
+
+
+

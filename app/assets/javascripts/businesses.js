@@ -3,7 +3,7 @@
 
 $(document).ready(function() {
   $('.insta-applier-item').on('click', function(elem){
-    console.log(elem);
+    // console.log(elem);
     var app_id = $(elem.target).data("idApp");
     var cpgn_id = $(elem.target).data("idCpgn");
     // /campaigns/:campaign_id/applications/:id
