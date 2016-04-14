@@ -12,7 +12,7 @@ class ApplicationsController < ApplicationController
       redirect_to campaign_path(@campaign)
     end
 
-    # render :show, layout: false
+    render :show, layout: false
   end
 
   def new
