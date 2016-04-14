@@ -44,7 +44,7 @@ class ApplicationsController < ApplicationController
   def update
     @application.update(application_params)
     authorize @application
-    redirect_to campaign_application_path(@application.campaign, @application)
+    redirect_to business_path(@application.campaignbusiness)
   end
 
   private

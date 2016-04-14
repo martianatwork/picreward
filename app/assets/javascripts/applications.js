@@ -8,7 +8,7 @@ $(document).ready(function() {
     // /campaigns/:campaign_id/applications/:id
     $.ajax({
      url: '/campaigns/'+ cpgn_id + '/applications/' + app_id,
-     type:'PATCH',
+     type:'PUT',
      data: {status: "reject"},
      success: function(data){
      console.log(data);
@@ -18,5 +18,23 @@ $(document).ready(function() {
         // console.log(hello);
       }
     });
+  });
+});
+
+//$("body").on('click') car on doit attendre que la page charge
+//listener sur body car on change le html de body
+$(document).ready(function() {
+  // $("#cf7_controls").on('click', 'span', function() {
+  $("body").on('click', '#cf7_controls span', function() {
+    $("#cf7 div").removeClass("opaque");
+    // $("#cf7 div i").removeClass("opaque");
+
+    var newImage = $(this).index();
+
+    $("#cf7 div").eq(newImage).addClass("opaque");
+    // $("#cf7 div i").eq(newImage).addClass("opaque");
+
+    $("#cf7_controls span").removeClass("selected");
+    $(this).addClass("selected");
   });
 });
