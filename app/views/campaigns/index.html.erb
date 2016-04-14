@@ -21,7 +21,7 @@
               <div class="local_swaps">
                 <% @local_swaps.each do |campaign| %>
                 <div class="col-xs-8 col-xs-offset-2">
-                  <div class="campaign-card">
+                  <div class="campaign-card fadeIn">
                     <p><%= campaign.title%></p>
                     <div class="campaign-card-banner" style="background-image: url(<%= cl_image_path campaign.photo %>);"></div>
                     <p> #<%= (campaign.product).split.join %> </p>
