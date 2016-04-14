@@ -4,7 +4,7 @@
   background-size: cover !important;
   background-position: center bottom;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .influencer-home-banner-content  p {
   font-family: Montserrat;
@@ -101,6 +101,7 @@
   padding-bottom: 50px;
   margin-right: 40px;
   margin-left: 40px;
+  margin-top: 70px;
 }
 
 .influencer-home-button-container {
@@ -233,7 +234,17 @@
   margin-bottom: 20px
 }
 
-
+.arrow-link-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  i {
+    font-size: 40px;
+    color: white;
+  }
+}
 
 
 
