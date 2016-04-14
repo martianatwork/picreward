@@ -70,7 +70,7 @@
   color: #133959;
   font-size: 14px;
   border: 0.6px solid #133959;
-  background: linear-gradient(45deg, $flashy-blue 50%,  white 50%);
+  background: linear-gradient(45deg, $flashy-blue 50%,  transparent 50%);
   background-size: 240% 100%;
   background-position:right bottom;
   transition: all 0.3s ease;
@@ -80,7 +80,7 @@
 
 
 .brand-button:hover {
-    background: linear-gradient(45deg, $flashy-blue 50%, white 50%);
+    background: linear-gradient(45deg, $flashy-blue 50%, transparent 50%);
     background-size: 240% 100%;
     background-position:left bottom;
     transition: all 0.3s ease;

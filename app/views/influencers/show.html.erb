@@ -1,38 +1,50 @@
+<div class="insta-influencer-card-container">
+      <div class="insta-pic-business-show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= @influencer.photo %>');">
+        <div class='insta-budget-container'>
+          <div class='insta-budget'>
+            <%= @influencer.username %>
+          </div>
+        </div>
+        <div class='insta-product'><i class="fa fa-users" aria-hidden="true"></i> <%= @influencer.followers %></div>
+      </div>
+      <div class="business-insta-description">
+        <div class="insta-title-container">
+          <div class='influencer-show-insta-title'>
+            My campaigns
+          </div>
+        </div>
 
-<div class="business-card-container">
- <div class="card-carroussel">
-   <div class="card-pic">
+        <div class="influencer-campaigns">
+          <% (@influencer.applications).each do |application| %>
+            <% if application.status == "Accept" %>
+              <div class="influencer-campaigns">
+              <div class="influencer-show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=application.campaign.photo%>');">
+                <div class="influencer-show-card-category"><%=application.status%>ed</div>
+                <div class="influencer-show-card-description">
+                  <h4><%= application.campaign.title %></h4>
+                </div>
+                <%= link_to "", campaign_path(application.campaign), class:"influencer-show-link"%>
+              </div>
+              </div>
+            <% end %>
+          <% end %>
 
-    <% (Pic.order(likes: :desc).where("influencer_id = ?", @influencer.id).limit(1)).each do |pic|%>
-    <div class="card-background" style="background: url('<%= pic.pic_url %>');">
-    <%= @likes = pic.likes%>
+        <div class="influencer-campaigns">
+          <% (@influencer.applications).each do |application| %>
+            <% if application.status == "Pending" %>
+              <div class="influencer-show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=application.campaign.photo%>');">
+                <div class="influencer-show-card-category"><%=application.status%></div>
+                <div class="influencer-show-card-description">
+                  <h4> <%= application.campaign.title%> </h4>
+                </div>
+                <%= link_to "", campaign_path(application.campaign), class:"influencer-show-link"%>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
 
-    </div>
-    <% end %>
+
   </div>
 </div>
-<div>
-  <p> <i class="fa fa-heart"></i><%= @likes %></p>
-  <p><%= @influencer.followers %></p>
-  <h4>Likes/Photo Ratio</h4>
-  <p> <i class="fa fa-heart-o"></i><%= @influencer.avg_photo_likes %> / Photo</p>
-  <h4>Comments/Photo Ratio</h4>
-  <p><%= @influencer.avg_photo_comments %></p>
-  <hr class="line">
-
-
-  <i class="fa fa-heart-o"></i>    Love it? Check it!
-
 </div>
-
-
-</div>
-
-
-
-
-
-
-
-
 
