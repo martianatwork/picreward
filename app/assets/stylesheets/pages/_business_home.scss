@@ -108,3 +108,114 @@
   padding-bottom: 20px
 }
 
+
+// wrapper-brands
+.wrapper-brands {
+  min-height: 400px;
+  width: 100vh;
+  margin-top: 80px;
+}
+
+
+.type-brands-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+// wrapper_type_of_brands
+.container-type-brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.small-brand-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2016/02/18/1058316617_B977890751Z.1_20160218220924_000_GR6649LSO.1-0.jpg');
+  background-position: center right;
+  background-size: cover;
+  height: 400px;
+  margin-right: 20px;
+  flex-flow: column;
+}
+
+.medium-brand-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('http://www.color13.com/wp-content/uploads/2015/12/Do-it-with-passion-Color13-Tennis-and-padel-t-shirt.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+  margin-right: 20px;
+  margin-left: 20px;
+  flex-flow: column;
+}
+
+.large-brand-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://s-media-cache-ak0.pinimg.com/736x/be/27/27/be27279b2e4d2335367b9f5c75aa0af2.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 400px;
+  margin-left: 20px;
+  flex-flow: column;
+}
+
+// inside card
+.small-brand-logo{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.medium-brand-logo{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+.large-brand-logo{
+  flex:1;
+
+}
+.type-brand {
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.type-brand-button {
+  margin-bottom: 35px;
+}
+
+.logo-brand {
+  opacity: 0.7;
+  height: 200px;
+  width: 200px;
+  z-index: 1;
+}
+
+//benefits
+.wrapper-benefits {
+  height: 80vh;
+  background-color: #648BB6;
+}
+
+.business-home-benefits-content {
+  padding-top: 100px;
+}
+
+
+
