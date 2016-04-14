@@ -45,8 +45,8 @@
         <%= cl_image_tag current_user.business.photo, width: 50, height: 50, crop: :fill, class: "avatar-bordered dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to business_path(current_user) do %>
-            <i class="fa fa-user"></i> <%= t ".profile", default: "My Dashboard" %>
+            <%= link_to new_campaign_path do %>
+            <i class="fa fa-bullhorn"></i> <%= t ".profile", default: "Create campaign" %>
             <% end %>
           </li>
           <li>
