@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PicReward</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title><%= meta_title %></title>
+  <meta name="description" content="<%= meta_description %>">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-  </head>
+  <!-- Facebook Open Graph data -->
+  <meta property="og:title" content="<%= meta_title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:image" content="<%= image_url(meta_image) %>" />
+  <meta property="og:description" content="<%= meta_description %>" />
+  <meta property="og:site_name" content="<%= meta_title %>" />
 
-  <body>
-    <%= render 'shared/navbar' unless @disable_nav %>
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="<%= DEFAULT_META[:twitter_account] %>">
+  <meta name="twitter:title" content="<%= meta_title %>">
+  <meta name="twitter:description" content="<%= meta_description %>">
+  <meta name="twitter:creator" content="<%= DEFAULT_META[:twitter_account] %>">
+  <meta name="twitter:image:src" content="<%= image_url(meta_image) %>">
 
-    <%= render 'shared/flashes' %>
+  <!-- Google+ Schema.org markup -->
+  <meta itemprop="name" content="<%= meta_title %>">
+  <meta itemprop="description" content="<%= meta_description %>">
+  <meta itemprop="image" content="<%= image_url(meta_image) %>">
 
-    <%= yield %>
+  <%= csrf_meta_tags %>
 
-    <%= render 'shared/footer' unless @disable_footer %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+</head>
 
-    <%= javascript_include_tag 'application' %>
-    <%= yield(:after_js) %>
-  </body>
+<body>
+  <%= render 'shared/navbar' unless @disable_nav %>
+
+  <%= render 'shared/flashes' %>
+
+  <%= yield %>
+
+  <%= render 'shared/footer' unless @disable_footer %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield(:after_js) %>
+</body>
 </html>
