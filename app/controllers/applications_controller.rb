@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :find_application, only: [:show, :edit, :update]
-
+  before_filter :disable_nav, only: [:show]
+  before_filter :disable_footer, only: [:show]
   def index
     @applications = policy_scope(Application)
   end
@@ -12,7 +13,7 @@ class ApplicationsController < ApplicationController
       redirect_to campaign_path(@campaign)
     end
 
-    render :show, layout: false
+    # render :show, layout: false
   end
 
   def new
@@ -45,6 +46,14 @@ class ApplicationsController < ApplicationController
     @application.update(application_params)
     authorize @application
     redirect_to business_path(@application.campaign.business)
+  end
+
+  def disable_nav
+    @disable_nav = true
+  end
+
+  def disable_footer
+    @disable_footer = true
   end
 
   private
