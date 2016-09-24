@@ -4,6 +4,8 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( vex.css )
 Rails.application.config.assets.precompile += %w( vex-theme-default.css )
+Rails.application.config.assets.precompile += %w( infobox_packed.js )
+Rails.application.config.assets.precompile += %w( markerclusterer.js )
 # Rails.application.config.assets.precompile += %w( vex.combined.min.js )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
